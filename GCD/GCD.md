@@ -60,3 +60,97 @@ GCD는 각 어플리케이션에서 생성된 DispatchQueue를 읽는 멀티코�
     - 하지만 멀티 코어에서도 동시성은 사용 가능하다.
     - 멀티 태스킹을 위해 여러 개의 스레드가 번갈아가면서 실행되는 성질
     - 동시성을 이용한 싱글 코어의 멀티 태스킹은 각 스레드들이 병렬적으로 실행되는 것처럼 보이지만 사실은 번갈아가면서 조금씩 실행되고 있는 것
+
+---
+
+### 사용법
+
+> System이 제공하는 Queue에는 `Main` 과 `Global` 이 있다.
+
+- Main
+    - UI와 관련된 작업은 모두 main큐를 통해서 수행하며 Serial Queue에 해당된다.
+    - MainQueue를 sync 메서드로 동작시키면 Dead Lock 상태에 빠진다.
+
+    ```swift
+    DispatchQueue.main.async{ }
+    ```
+
+- Global
+    - UI를 제외한 작업에서 사용하며 Concurrent Queue에 해당한다.
+    - sync와 async 메서드 모두 사용 가능하다.
+    - Qos 클래스를 지정하여 우선순위 설정이 가능하다.
+
+    ```swift
+    DispatchQueue.global().async{ }
+    DispatchQueue.global(qos: .utility).sync{ }
+    ```
+
+
+### QoS(Quality of service)
+
+> 시스템은 QoS 정보를 통해 스케줄링, CPU 및 I/O 처리량, 타이머 대기 시간 등의 우선 순위를 조정
+총 6개의 QoS 클래스가 있으며 4개의 주요 유형과 다른 2개의 특수 유형으로 구분 가능
+[낮은순] unspecified → background → utility → default → userInitiated → userInteractive [높은순]
+
+
+### Primary QoS classes
+
+> 우선 순위가 높을 수록 더 빨리 수행되고 더 많은 전력을 소모
+수행 작업에 적절한 QoS 클래스를 지정해주어야 더 반응성이 좋아지며, 효율적인 에너지 사용이 가능
+
+- User Interactive
+    - 즉각 반응해야 하는 작업으로 반응성 및 성능에 중점
+    - main thread에서 동작하는 인터페이스 새로 고침, 애니메이션 작업 등 즉각 수행되는 유저와의 상호작용 작업에 할당
+- User Initiated
+    - 몇 초 이내의 짧은 시간 내 수행해야 하는 작업으로 반응성 및 성능에 중점
+    - 문서를 열거나, 버튼을 클릭해 액션을 수행하는 것처럼 빠른 결과를 요구하는 유저와의 상호작용 작업에 할당
+- Utility
+    - 수초에서 수분에 걸쳐 수행되는 작업으로 반응성, 성능, 그리고 에너지 효율성 간에 균형을 유지하는 데 중점
+    - 데이터를 읽어들이거나 다운로드 하는 등 작업을 완료하는데 어느 정도 시간이 걸릴 수 있으며 보통 진행 표시줄로 표현 Background
+    - 수분에서 수시간에 걸쳐 수행되는 작업으로 에너지 효율성에 중점. NSOperation 클래스 사용 시 기본 값
+    - background에서 동작하며 색인 생성, 동기화, 백업 같이 사용자가 볼 수 없는 작업에 할당
+    - 저전력 모드에서는 네트워킹을 포함하여 백그라운드 작업은 일시 중지
+
+
+### Special QoS Classes
+
+> 일반적으로, 별도로 사용할 일이 없는 특수 유형의 QoS
+
+- Default
+    - QoS를 별도로 지정하지 않으면 기본값으로 사용되는 형태이며 User Initiated와 Utility의 중간 레벨
+    - GCD global queue의 기본 동작 형태
+- Unspecified
+    - QoS 정보가 없으므로 시스템이 QoS를 추론해야 한다는 것을 의미
+
+```swift
+/* * Main   : UI와 관련된 작업
+   * Global : UI를 제외한 작업에서 사용 */
+
+/* 1번이 끝나고 2번이 동작한다. */
+DispatchQueue.global(qos: .userInitiated).async {
+
+    // 1번
+    // 위의 작업이 끝나야만
+    for _ in 0...900_000_000 {
+        _ = 1 + 1
+    }
+
+    // 2번
+    //밑에 스레드가 실행된다.
+    //main스레드는 UI작업을 할때 사용된다.
+    DispatchQueue.main.async {
+        print("Start")
+        self.testView.frame.origin.y += 250
+        self.view.backgroundColor = .yellow
+    }
+
+/* 1번과 2번이 따로 동작하게된다. */
+DispatchQueue.global().async {
+    //1번
+    for _ in 0...900_000_000 {
+        _ = 1 + 1
+    }
+}
+//2번
+self.view.backgroundColor = .magenta
+```
