@@ -21,3 +21,42 @@ GCD는 각 어플리케이션에서 생성된 DispatchQueue를 읽는 멀티코�
     - eliminates the code needed to create and configure your threads.
     - eliminates the code needed to manage and schedule work on threads.
     - simplifies the code
+
+## DispatchQueue
+
+- GCD는 앱이 블록 객체 형태로 작업을 전송할 수 있는 FIFO 대기열 (Queue)을 제공하고 관리한다.
+- Queue에 전달된 작업은 시스템이 전적으로 관리하는 스레드 풀(a pool of threads)에서 실행된다.
+- DispatchQueue는 2개의 타입(Serial / Concurrent)으로 구분되며 둘 모두 FIFO 순서로 처리한다.
+- 앱을 실행하면 시스템이 자동으로 메인스레드 위에서 동작하는 Main 큐(Serial Queue)를 만들어서 작업을 수행하고, 그 외에 추가적으로 여러 개의 Global 큐(Cuncurrent Queue)를 만들어서 큐를 관리한다.
+- 각 작업은 동기(sync) 방식과 비동기(async) 방식으로 실행 가능하지만 Main 큐에서는 async 만 사용 가능
+
+### Serial Queue
+
+- Serial Queue는 큐에 추가된 순서대로 한번에 하나의 Task를 실행한다.
+
+<img src = "https://i.imgur.com/CCNk1fj.png">
+
+### Concurrent Queue
+
+- Concurrent Queue는 동시에 하나 이상의 task를 실행하지만 큐에 추가됐을 시에 추가된 순서대로 작업을 계속 진행한다. 위의 사진을 보면 동시에 진행하고 있지만 사실 동시에 진행되는 것이 아니다.
+
+<img src = "https://i.imgur.com/DzZWIFn.png">
+
+### Concurrency(동시성) vs Parallelism(병렬성)
+
+<img src = "https://i.imgur.com/UoR30Ms.png">
+
+- 병렬성(Parallelism)
+    - 물리적인 용어
+    - 실제로 작업이 동시에 처리되는 것
+    - 멀티 코어에서 멀티 스레드를 동작시키는 방식
+    - 한 개 이상의 스레드를 포함하는 각 코어들이 동시에 실행되는 성질
+    - 병렬성은 데이터 병렬성(Data parallelism)과 작업 병렬성(Task parallelism)으로 구분
+
+- 동시성(Concurrency)
+    - 논리적인 용어
+    - 동시에 실행되는 것처럼 보이는 것이다.
+    - 싱글 코어에서 멀티 스레드를 동작시키기 위한 방식
+    - 하지만 멀티 코어에서도 동시성은 사용 가능하다.
+    - 멀티 태스킹을 위해 여러 개의 스레드가 번갈아가면서 실행되는 성질
+    - 동시성을 이용한 싱글 코어의 멀티 태스킹은 각 스레드들이 병렬적으로 실행되는 것처럼 보이지만 사실은 번갈아가면서 조금씩 실행되고 있는 것
