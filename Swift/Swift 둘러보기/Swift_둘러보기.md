@@ -479,7 +479,7 @@ func hello(name: String, time: Int = 1){
 	// ...
 }
 
-hello("전수열")
+hello("노연주")
 ```
 
 `...` 을 사용하면 개수가 정해지지 않은 파라미터 Variadic Parameters를 받을 수 있다.
