@@ -14,7 +14,11 @@
 
     Model에 넣기도 애매하고 View에 넣기 애매한 코드들은 모두 Controller에 들어가게 되어서 Controller가 비대해진다. 
 
-    - Example
+    > Example
+
+        날짜 데이터를 각 국가별 양식으로 포맷하는 코드.
+
+        비지니스 로직이나 데이터라고 보기도 어렵고 UI라고 보기도 어렵다. 결국 이와 같은 Formatting 담당 코드들은 Controller에 들어가게 된다.
 
 2. 애플의 MVC 패턴에서는 View와 Controller가 너무 친하다.
 
@@ -36,7 +40,10 @@
 
 MVC와 달리 ViewModel이 중간 다리 역할을 하고 ViewModel이 중간 다리 역할을 하고 ViewController가 View로 들어간 패턴이다. 따라서 Controller와 Model은 서로 대화할 수 없다. ViewModel을 통해야한다.
 
-- ViewModel
+> ViewModel
+
+     ViewModel은 Presentation Logic을 다루게 된다. 하지만 UI는 다루지 않는다.
+     ViewModel과 View를 바인딩 할 때 주로 Rx를 이용한다.
 
 ### 장점
 
