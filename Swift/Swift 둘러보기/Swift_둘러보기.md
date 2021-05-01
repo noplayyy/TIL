@@ -997,3 +997,81 @@ coffeeInfo(for: "에스프레소")?.price // nil
 let(_, lattePrice) = coffeeInfo(for: "라떼")!
 latteePrice // 5600 
 ```
+
+## Enum
+
+---
+
+열거라는 뜻을 가진 Enumeration에서 따온 용어이다. 한글로 번역할 때에는 열거형이라는 말을 많이 사용한다. 1월부터 12월까지를 `enum` 으로 한 번 정의해보자.
+
+```swift
+enum Month: Int {
+	case january = 1
+	case febuary
+	case march
+	case april
+	case may
+	case june
+	case july
+	case august
+	case september
+	case october
+	case november
+	case december
+
+	func simpleDescription() -> String {
+		switch self {
+		case .january":
+			return "1월"
+		case .february:
+      return "2월"
+    case .march:
+      return "3월"
+    case .april:
+      return "4월"
+    case .may:
+      return "5월"
+    case .june:
+      return "6월"
+    case .july:
+      return "7월"
+    case .august:
+      return "8월"
+    case .september:
+      return "9월"
+    case .october:
+      return "10월"
+    case .november:
+      return "11월"
+    case .december:
+      return "12월"
+    }
+  }
+}
+
+let december = Month.december
+print(december.simpleDescription()) // 12월
+print(december.rawValue)            // 12
+```
+
+위 예시에서 작성한 `Month` 는 `Int` 를 원시값으로 가지도록 정의되었다. 그렇기 때문에 각 케이스들은 1부터 12의 값을 가지고 있다. `rawValue` 속성이 바로 그 값을 나타낸다. 반대로, 원시값을 가지고 Enum을 만들 수 있다.
+
+```swift
+let october = Month(rawValue: 10)
+print(october) // Optional(Month.october)
+```
+
+`Month(rawValue:)` 의 반환값이 옵셔널인 이유는, Enum에서 정의되지 않은 원시값을 가지고 생성할 경우 `nil` 을 반환하기 때문이다.
+
+```swift
+Month(rawValue: 13) //nil
+```
+
+일반적으로 Enum은 `Int` 만을 원시값으로 가질 수 있다고 생각한다. 다른 프로그래밍 언어에서는 모두 그렇다. 하지만, Swift의 Enum은 조금 독특하다. 아래 예시는 `String` 을 원시값으로 가지는 Enum이다.
+
+```swift
+enum IssueState: String {
+	case open = "open"
+	case closed = "closed"
+}
+```
