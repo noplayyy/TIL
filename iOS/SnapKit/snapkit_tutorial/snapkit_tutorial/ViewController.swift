@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
 
@@ -42,19 +43,25 @@ class ViewController: UIViewController {
         self.view.addSubview(yellowBox)
         self.view.addSubview(blueBox)
         
-        yellowBox.translatesAutoresizingMaskIntoConstraints = false
-        greenBox.translatesAutoresizingMaskIntoConstraints = false
-        redBox.translatesAutoresizingMaskIntoConstraints = false
-        blueBox.translatesAutoresizingMaskIntoConstraints = false
+//        yellowBox.translatesAutoresizingMaskIntoConstraints = false
+//        greenBox.translatesAutoresizingMaskIntoConstraints = false
+//        redBox.translatesAutoresizingMaskIntoConstraints = false
+//        blueBox.translatesAutoresizingMaskIntoConstraints = false
+//
+////        yellowBox.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
+////        yellowBox.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.8).isActive = true
+////        yellowBox.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+////        yellowBox.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//
+//        // 기존 오토 레이아웃
+//        yellowBox.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
+//        yellowBox.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
+//        yellowBox.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20).isActive = true
+//        yellowBox.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
         
-//        yellowBox.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
-//        yellowBox.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.8).isActive = true
-//        yellowBox.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-//        yellowBox.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        yellowBox.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
-        yellowBox.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20).isActive = true
-        yellowBox.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20).isActive = true
-        yellowBox.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20).isActive = true
+        yellowBox.snp.makeConstraints { (make) in // make -> 이건 맘대로 작성가능
+            make.edges.equalTo(self.view).inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
+        }
     }
 
 }
