@@ -7,7 +7,20 @@
 
 import UIKit
 
+struct CustomData {
+    var title: String
+    var image: UIImage
+    var url: String
+}
+
 class ViewController: UIViewController {
+    
+    let data = [
+        CustomData(title: "나의 할 일", image: #imageLiteral(resourceName: "Menu1"), url: "maxcodes.io/courses"),
+        CustomData(title: "우리의 할 일", image: #imageLiteral(resourceName: "Menu2"), url: "maxcodes.io/courses"),
+        CustomData(title: "심부름", image: #imageLiteral(resourceName: "Menu3"), url: "maxcodes.io/courses"),
+        CustomData(title: "문의하기", image: #imageLiteral(resourceName: "Menu2"), url: "maxcodes.io/courses"),
+    ]
     
     fileprivate let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -23,9 +36,9 @@ class ViewController: UIViewController {
         
         view.addSubview(collectionView)
         collectionView.backgroundColor = .white
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 29).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         collectionView.heightAnchor.constraint(equalTo: collectionView.widthAnchor, multiplier: 0.5).isActive = true
         
         collectionView.delegate = self
@@ -43,23 +56,34 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.width/2)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
-        cell.backgroundColor = .red
+        cell.data = self.data[indexPath.row]
         return cell
     }
 }
 
 class CustomCell: UICollectionViewCell {
     
+    var data: CustomData?{
+        didSet {
+            guard let data = data else {
+                return
+            }
+            bg.image = data.image
+        }
+    }
+    
     fileprivate let bg: UIImageView = {
         let iv = UIImageView()
+        iv.image = #imageLiteral(resourceName: "Menu4")
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
+        iv.layer.cornerRadius = 12
         return iv
     }()
     
