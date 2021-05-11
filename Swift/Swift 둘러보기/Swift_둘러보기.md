@@ -1075,3 +1075,7 @@ enum IssueState: String {
 	case closed = "closed"
 }
 ```
+
+만약 어떤 API의 응답에서 내려주는 `state` 의 값이 `open` 또는 `closed` 라면, `if-else` 없이도 `IssueState(rawValue:)` 를 사용해서 Enum을 생성할 수 있다.
+
+Enum은 원시값을 가지지 않을 수도 있다. 원시값을 가져야 할 필요가 없다면 굳이 만들지 않아도 된다.
