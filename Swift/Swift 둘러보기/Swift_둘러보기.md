@@ -1079,3 +1079,25 @@ enum IssueState: String {
 만약 어떤 API의 응답에서 내려주는 `state` 의 값이 `open` 또는 `closed` 라면, `if-else` 없이도 `IssueState(rawValue:)` 를 사용해서 Enum을 생성할 수 있다.
 
 Enum은 원시값을 가지지 않을 수도 있다. 원시값을 가져야 할 필요가 없다면 굳이 만들지 않아도 된다.
+
+```swift
+enum Spoon {
+	case dirt
+	case bronze
+	case silver
+	case gold
+	
+	func simpleDescription() -> String {
+		switch self {
+		case .dirt:
+			return "흙"
+		case .bronze:
+			return "동"
+		case .silver:
+			return "은"
+		case .gold:
+			return "금"
+		}
+	}
+}
+```
