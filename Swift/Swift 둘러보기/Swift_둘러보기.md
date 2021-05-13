@@ -1101,3 +1101,27 @@ enum Spoon {
 	}
 }
 ```
+
+Enum을 예측할 수 있다면 Enum의 이름을 생략할 수 있다.
+
+```swift
+let spoon: Spoon = .gold // 변수에 타입 어노테이션이 있기 때문에 생략 가능
+func doSomething(with spoon: Spoon) {
+	// ...
+}
+doSomething(with: .silver) // 함수 정의에 타입 어노테이션이 있기 때문에 생략
+```
+
+
+### 연관 값 (Associated Values)을 가지는 Enum
+
+Enum은 연관 값 Associated Values을 가질 수 있습니다. 아래 예시는 어떤 API에 대한 에러를 정의한 것인데요. `invalidParameter` 케이스는 필드 이름과 메시지를 가지도록 정의되었다.
+
+```swift
+enum NetworkError {
+	case invalidParameter(String, String)
+	case timeout
+}
+
+let error: NetworkError = .invalidParameter("email", "이메일 형식이 올바르지 않습니다.")
+```
