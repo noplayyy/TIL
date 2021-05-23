@@ -1114,6 +1114,7 @@ doSomething(with: .silver) // 함수 정의에 타입 어노테이션이 있기 
 
 
 ### 연관 값 (Associated Values)을 가지는 Enum
+---
 
 Enum은 연관 값 Associated Values을 가질 수 있습니다. 아래 예시는 어떤 API에 대한 에러를 정의한 것인데요. `invalidParameter` 케이스는 필드 이름과 메시지를 가지도록 정의되었다.
 
@@ -1141,5 +1142,37 @@ case .invalidParameter(let field, let message):
 
 default:
   break
+}
+```
+
+### 사실 옵셔널은 Enum이다!
+---
+
+실제로는 이렇게 생겼다.
+
+```swift
+public enum Optional<Wrapped> {
+	case none
+	case some(Wrapped)
+}
+```
+
+옵셔널은 Enum이기 때문에, 아래와 같은 구문도 사용할 수 있다.
+
+```swift
+let age: Int? = 20
+
+switch age {
+case .none: // 'nil'인 경우
+	print("나이 정보가 없습니다.")
+
+case .some:(let x) where x < 20"
+	print("청소년")
+
+case .some:(let x) where x < 65"
+	print("성인")
+
+default:
+	print("어르신")
 }
 ```
