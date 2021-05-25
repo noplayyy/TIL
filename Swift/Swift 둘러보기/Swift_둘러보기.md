@@ -1214,3 +1214,33 @@ struct Feedback: Sendable {
 	}
 }
 ```
+
+프로토콜은 마치 추상클래스처럼 사용될 수 있다.
+
+```swift
+func sendAnything(_sendable: Sendable) {
+	sendable.send()
+}
+
+let mail = Mail(from: "devxoul@gmail.com", to: "jeon@stylesha.re")
+sendAnything(mail)
+
+let feedback = Feedback(from: "devxoul@gmail.com")
+sendAnything(feedback)
+```
+
+`sendAnything()` 함수는 `Sendable` 타입을 파라미터로 받는다. `Mail` 와 `Feedback` 은 엄연히 다른 타입이지만, 모두 `Sendable` 을 따르고 있으므로 `sendAnything()` 함수에 전달될 수 있다. 그리고, `Sendable` 에서는 `send()` 함수를 정의하고 있기 때문에 호출이 가능하다.
+
+프로토콜은 또다른 프로토콜을 따를 수 있습니다.
+
+```swift
+protocol Messageable {
+	var message: String? { get }
+}
+
+protocol Sendable: Messagable {
+	// ...
+}
+```
+
+`Sendable`은 `Messagable`을 기본적으로 따르는 프로토콜이다. 따라서, `Sendable`을 적용하려면 `var message: String? { get }`을 정의해주어야 한다.
