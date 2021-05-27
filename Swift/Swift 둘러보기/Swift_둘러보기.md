@@ -1240,3 +1240,54 @@ protocol Sendable: Messagable {
 ```
 
 `Sendable`은 `Messagable`을 기본적으로 따르는 프로토콜이다. 따라서, `Sendable`을 적용하려면 `var message: String? { get }`을 정의해주어야 한다.
+
+
+### Any와 AnyObject
+
+---
+
+`Any` 는 모든 타입에 대응한다. `AnyObject` 는 모든 객체에 대응한다.
+
+```swift
+let anyNumber: Any = 18
+let anyString: Any = "Hi"
+
+let anyInstance: AnyObject = Dog()
+```
+
+`Any` 와 `AnyObject` 는 프로토콜이다. Swift에서 사용 가능한 모든 타입은 `Any` 를 따르도록 설계되었고, 모든 클래스들에는 `AnyObject` 프로토콜이 적용되어 있다.
+
+
+### 타입 캐스팅 (Type Casting)
+
+---
+
+`anyNumber`에 `10`을 넣었다고 해서 `anyNumber`가 `Int` 는 아니다. ' `Any` 프로토콜을 따르는 어떤 값'이기 때문이다.
+
+```swift
+anyNumber + 1 // 컴파일 에러!
+```
+
+이럴 때에는 `as` 를 이용해서 다운 캐스팅을 해야한다. `Any` 는 `Int` 보다 더 큰 범위이기 때문에, 작은 범위로 줄인다고 하여 '다운 캐스팅'이다.
+
+`Any` 는 `Int` 뿐만 아니라 `String` 과 같은 전혀 엉뚱한 타입도 포함되어 있기 때문에 무조건 `Int` 로 변환되지 않는다. 따라서 `as?` 를 사용해서 옵셔널을 취해야 한다.
+
+```swift
+if let number = anyNumber as? Int {
+	print(number + 1)
+}
+```
+
+
+### 타입 검사
+
+---
+
+타입 캐스팅까지는 필요 없고, 만약 어떤 값이 특정한 타입인지를 검사할 때에는 `is` 를 사용할 수 있다.
+
+```swift
+print(anyNumber is Int) // true
+print(anyNumber is Any) // true
+print(anyNumber is String) // false
+print(anyString is Stirng) // true
+```
