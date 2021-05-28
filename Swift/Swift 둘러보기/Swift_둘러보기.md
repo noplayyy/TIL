@@ -1291,3 +1291,78 @@ print(anyNumber is Any) // true
 print(anyNumber is String) // false
 print(anyString is Stirng) // true
 ```
+
+## Swift 주요 프로토콜
+
+Swift에는 기본적으로 제공하는 기초적인 프로토콜들이 있다. 알아두면 개발할 때 굉장히 유용하게 사용할 수 있다.
+
+
+### CustomStringConvertible
+
+---
+
+자기 자신을 표현하는 문자열을 정의한다. `print()` , `String()`  또는 `"\()"` 에서 사용될 때의 값입니다. `CustomStringConvertible` 의 정의는 아래와 같이 생겼다.
+
+```swift
+public protocol CustomStringConvertible {
+	// A textual representation of  `self`.
+	public var description: String { get }
+}
+```
+
+실제로 적용해보자.
+
+```swift
+struct Dog: CustomStringConvertible {
+	var name: String
+	var description: Stirng {
+		return "🐶 \(self.name)"
+	}
+}
+
+let dog = Dog(name: "찡코")
+print(dog) // 🐶 찡코
+```
+
+
+### ExpressibleBy
+
+---
+
+우리는 지금까지 `10` 은  `Int` , `"Hi"` 는 `String` 이라고 '당연하게' 인지하고 있었다. 하지만, 엄밀히 하자면 `10` 은 원래 `Int(10)` 으로 선언되어야 하고, `"Hi"` 는 `String("Hi")` 로 선언되어야 한다. `Int` 와 `String` 모두 생성자를 가지는 구조체이기 때문이다.
+
+이렇게, 생성자를 사용하지 않고도 생성할 수 있게 만드는 것을 리터럴이라고 한다. 직역하면 '문자 그대로'라는 뜻이다. 아래 코드는 문자 그대로 `10` , 문자 그대로 `"Hi"` , 문자 그대로 배열이고 딕셔너리이다.
+
+```swift
+let number = 10
+let string = "Hi"
+let array = ["a", "b", "c"]
+let dictionary = [
+	"key1": "value1",
+	"key2": "value2",
+]
+```
+
+이 리터럴을 가능하게 해주는 프로토콜이 있다. 바로 `ExpressibleByXXXLiteral` 이다. 
+
+`Int` 는 `ExpressibleByIntegerLiteral`을, `String`은 `ExpressibleByStringLiteral`을, `Array`는 `ExpressibleByArrayLiteral`을, `Dictionary`는 `ExpressibleByDictionaryLiteral` 프로토콜을 따르고 있다. 각 프로토콜은 리터럴 값을 받는 생성자를 정의하고 있다.
+
+우리도 만들 수 있다.
+
+```swift
+struct DollarConverter: ExpressibleByIntegerLiteral {
+  typealias IntegerLiteralType = Int
+
+  let price = 1_177
+  var dollars: Int
+
+  init(integerLiteral value: IntegerLiteralType) {
+    self.dollars = value * self.price
+  }
+}
+
+let converter: DollarConverter = 100
+converter.dollars // 117700
+```
+
+분명히 구조체를 만들었는데, `ExpressibleByIntegerLiteral` 을 적용하니까 `=100` 과 같은 문법을 사용할 수 있게 되었다.
