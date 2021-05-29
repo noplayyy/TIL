@@ -1366,3 +1366,25 @@ converter.dollars // 117700
 ```
 
 분명히 구조체를 만들었는데, `ExpressibleByIntegerLiteral` 을 적용하니까 `=100` 과 같은 문법을 사용할 수 있게 되었다.
+
+
+## 익스텐션 (Extension)
+
+
+Swift에서는 이미 정의된 타입에 새로운 속성이나 메서드를 추가할 수 있다. 익스텐션이라는 기능인데, `extension` 키워드를 사용해서 정의할 수 있다.
+
+```swift
+extension String {
+	var length: Int {
+		return self.characters.count
+	}
+
+	func reversed() -> String {
+		return self.characters.reversed().map { String($0) }.joined(separator: "")
+	}
+}
+
+let str = "안녕하세요"
+str.length // 5
+str.reversed() // 요세하녕안
+```
