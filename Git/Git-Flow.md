@@ -21,3 +21,5 @@ git flow를 사용했을 때 작업을 어떻게 하는지 살펴보기 전에 �
 <img src = "https://woowabros.github.io/img/2017-10-30/git-flow_overall_graph.png"/>
 
 위 그림을 일반적인 개발 흐름으로 살펴보면 처음에는 master와 develop 브랜치가 존재한다. 물론 develop 브랜치는 master에서부터 시작된 브랜치이다. develop 브랜치에서는 상시로 버그를 수정한 커밋들이 추가된다. 새로운 기능 추가 작업이 있는 경우 develop 브랜치에서 feature 브랜치를 생성한다. feature 브랜치는 언제나 develop 브랜치에서부터 시작하게 된다. 기능 추가 작업이 완료되었다면 feature 브랜치는 develop 브랜치로 merge된다. develop에 이번 버전에 포함되는 모든 기능이 merge 되었다면 QA를 하기 위해 develop 브랜치에서부터 release 브랜치를 생성한다. QA를 진행하면서 발생한 버그들은 release 브랜치에 수정된다. QA를 무사히 통과했다면 release 브랜치를 master와 develop 브랜치로 merge한다. 마지막으로 출시된 master 브랜치에서 버전 태그를 추가한다.
+
+> 원할한 협업 진행을 위해 Git-flow를 공부하여 숙지하는 것이 좋다고 생각한다. 
