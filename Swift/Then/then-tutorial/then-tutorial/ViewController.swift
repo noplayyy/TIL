@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Then
 
 class ViewController: UIViewController {
 
@@ -19,14 +20,19 @@ class ViewController: UIViewController {
         return label
     }()
     
-    lazy var mySubLabel: UILabel = {
-        let label = UILabel()
-        label.text = "EZY-DEV-USE-THEN"
-        label.font = UIFont.systemFont(ofSize: 25, weight: .heavy)
-        label.textColor = UIColor.purple
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    lazy var mySubLabel = UILabel().then {
+        $0.text = "EZY-DEV-USE-THEN"
+        $0.font = UIFont.systemFont(ofSize: 25, weight: .heavy)
+        $0.textColor = UIColor.purple
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+//    lazy var mySubLabel = UILabel().then { myLabel in
+//        myLabel.text = "EZY-DEV-USE-THEN"
+//        myLabel.font = UIFont.systemFont(ofSize: 25, weight: .heavy)
+//        myLabel.textColor = UIColor.purple
+//        myLabel.translatesAutoresizingMaskIntoConstraints = false
+//    }
   
 // MARK: - LifeCycles
     override func loadView() {
