@@ -1389,3 +1389,6 @@ let str = "안녕하세요"
 str.length // 5
 str.reversed() // 요세하녕안
 ```
+
+
+[Reference](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/)

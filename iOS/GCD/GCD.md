@@ -155,3 +155,4 @@ DispatchQueue.global().async {
 self.view.backgroundColor = .magenta
 ```
 
+[Reference](https://jinshine.github.io/2018/07/09/iOS/GCD(Grand%20Central%20Dispatch)/)

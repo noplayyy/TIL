@@ -137,3 +137,5 @@ let viewModel = GreetingViewModel(person: model)
 let view = GreetingViewController()
 view.viewModel = viewModel
 ```
+
+[Reference](https://gwangyonglee.tistory.com/49)

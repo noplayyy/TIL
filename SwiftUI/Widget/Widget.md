@@ -56,3 +56,6 @@ RiddleWidget은 프로토콜 위젯을 따른다. 일부 유형의 WidgetConfigu
 Apple SDK가 제공하는 두 가지 유형의 WidgetConfiguration이 있다. 구성 가능한 위젯을 원하지 않으므로 여기서는 StaticConfiguration을 사용한다.
 
 사용자가 구성 가능한 위젯을 원할 경우, IntentConfiguration 뿐만 아니라 Siri Intent도 생성해야한다.
+
+
+[Reference](https://ichi.pro/ko/ios-hom-hwamyeon-eul-wihan-gandanhan-wijes-mandeulgi-57395460212602)

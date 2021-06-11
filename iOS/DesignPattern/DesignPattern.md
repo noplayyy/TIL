@@ -89,3 +89,6 @@ class PostListPresenter: PostListPresenterProtocol {
 ---
 
 navigation 코드를 Coordinate가 전부 담당하는 패턴
+
+
+[Reference](https://eunjin3786.tistory.com/31)
