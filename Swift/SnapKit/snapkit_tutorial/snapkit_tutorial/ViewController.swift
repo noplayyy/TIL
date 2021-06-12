@@ -65,10 +65,10 @@ class ViewController: UIViewController {
 //        redBox.translatesAutoresizingMaskIntoConstraints = false
 //        blueBox.translatesAutoresizingMaskIntoConstraints = false
 //
-////        yellowBox.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
-////        yellowBox.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.8).isActive = true
-////        yellowBox.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-////        yellowBox.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        yellowBox.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
+//        yellowBox.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.8).isActive = true
+//        yellowBox.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+//        yellowBox.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
 //
 //        // 기존 오토 레이아웃
 //        yellowBox.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20).isActive = true
