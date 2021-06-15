@@ -75,6 +75,10 @@ class ViewController: UIViewController {
         if flag1 == false {
             checkBox1.setImage(UIImage(named: "EZY_CheckedBox"), for: .normal)
             flag1 = true
+            if flag2 == true && flag3 == true {
+                AllCheckBox.setImage(UIImage(named: "EZY_CheckedBox"), for: .normal)
+                AllFlag = true
+            }
         } else if flag1 == true {
             checkBox1.setImage(UIImage(named: "EZY_UncheckedBox"), for: .normal)
             AllCheckBox.setImage(UIImage(named: "EZY_UncheckedBox"), for: .normal)
@@ -88,6 +92,10 @@ class ViewController: UIViewController {
         if flag2 == false {
             checkBox2.setImage(UIImage(named: "EZY_CheckedBox"), for: .normal)
             flag2 = true
+            if flag1 == true && flag3 == true {
+                AllCheckBox.setImage(UIImage(named: "EZY_CheckedBox"), for: .normal)
+                AllFlag = true
+            }
         } else if flag2 == true {
             checkBox2.setImage(UIImage(named: "EZY_UncheckedBox"), for: .normal)
             AllCheckBox.setImage(UIImage(named: "EZY_UncheckedBox"), for: .normal)
@@ -101,6 +109,10 @@ class ViewController: UIViewController {
         if flag3 == false {
             checkBox3.setImage(UIImage(named: "EZY_CheckedBox"), for: .normal)
             flag3 = true
+            if flag1 == true && flag2 == true {
+                AllCheckBox.setImage(UIImage(named: "EZY_CheckedBox"), for: .normal)
+                AllFlag = true
+            }
         } else if flag3 == true {
             checkBox3.setImage(UIImage(named: "EZY_UncheckedBox"), for: .normal)
             AllCheckBox.setImage(UIImage(named: "EZY_UncheckedBox"), for: .normal)
