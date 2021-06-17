@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Storyboard
+//  StoryboardExample
 //
 //  Created by 노연주 on 2021/06/17.
 //
