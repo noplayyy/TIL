@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5993B836C36D3909E9878033 /* Pods_GradientButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7ADFA4B795CAB51F97D3F3 /* Pods_GradientButton.framework */; };
 		AA44F122267ADDCC0053C8B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44F121267ADDCC0053C8B1 /* AppDelegate.swift */; };
 		AA44F124267ADDCC0053C8B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44F123267ADDCC0053C8B1 /* SceneDelegate.swift */; };
 		AA44F126267ADDCC0053C8B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44F125267ADDCC0053C8B1 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0568547975899D3B55794765 /* Pods-GradientButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientButton.release.xcconfig"; path = "Target Support Files/Pods-GradientButton/Pods-GradientButton.release.xcconfig"; sourceTree = "<group>"; };
+		1B7ADFA4B795CAB51F97D3F3 /* Pods_GradientButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GradientButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C732844FEBAAA43F73F9DA3 /* Pods-GradientButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GradientButton.debug.xcconfig"; path = "Target Support Files/Pods-GradientButton/Pods-GradientButton.debug.xcconfig"; sourceTree = "<group>"; };
 		AA44F11E267ADDCC0053C8B1 /* GradientButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradientButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA44F121267ADDCC0053C8B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA44F123267ADDCC0053C8B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5993B836C36D3909E9878033 /* Pods_GradientButton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27106AAEA4BA7A1899CA93BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C732844FEBAAA43F73F9DA3 /* Pods-GradientButton.debug.xcconfig */,
+				0568547975899D3B55794765 /* Pods-GradientButton.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		39C27917B7ADF8F7B96D7DC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B7ADFA4B795CAB51F97D3F3 /* Pods_GradientButton.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA44F115267ADDCC0053C8B1 = {
 			isa = PBXGroup;
 			children = (
 				AA44F120267ADDCC0053C8B1 /* GradientButton */,
 				AA44F11F267ADDCC0053C8B1 /* Products */,
+				27106AAEA4BA7A1899CA93BD /* Pods */,
+				39C27917B7ADF8F7B96D7DC8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA44F132267ADDCE0053C8B1 /* Build configuration list for PBXNativeTarget "GradientButton" */;
 			buildPhases = (
+				5F1E989332891390346778D6 /* [CP] Check Pods Manifest.lock */,
 				AA44F11A267ADDCC0053C8B1 /* Sources */,
 				AA44F11B267ADDCC0053C8B1 /* Frameworks */,
 				AA44F11C267ADDCC0053C8B1 /* Resources */,
+				80F9E5453996DC4B8BBD3861 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F1E989332891390346778D6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GradientButton-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80F9E5453996DC4B8BBD3861 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GradientButton/Pods-GradientButton-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GradientButton/Pods-GradientButton-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GradientButton/Pods-GradientButton-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA44F11A267ADDCC0053C8B1 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		AA44F133267ADDCE0053C8B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C732844FEBAAA43F73F9DA3 /* Pods-GradientButton.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		AA44F134267ADDCE0053C8B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0568547975899D3B55794765 /* Pods-GradientButton.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
