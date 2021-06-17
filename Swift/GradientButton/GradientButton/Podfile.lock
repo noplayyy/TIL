@@ -1,20 +1,24 @@
 PODS:
+  - DTGradientButton (0.1.3)
   - SnapKit (5.0.1)
   - Then (2.7.0)
 
 DEPENDENCIES:
+  - DTGradientButton
   - SnapKit (~> 5.0.0)
   - Then
 
 SPEC REPOS:
   trunk:
+    - DTGradientButton
     - SnapKit
     - Then
 
 SPEC CHECKSUMS:
+  DTGradientButton: 6f0f696cd433255d226c05e4ab047d991d13d4ef
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: d2c90e236e723cfa13afaaba4504cfa3c039fe45
+PODFILE CHECKSUM: 14a44c2ddec424bbd5693f21f5c4e174b58158df
 
 COCOAPODS: 1.10.1
