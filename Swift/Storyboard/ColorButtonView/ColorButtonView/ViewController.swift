@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    // MARK: - on tap redButton
     @IBAction func redButton(_ sender: UIButton) {
         if viewFlag == true {
             self.view.backgroundColor = .red
@@ -39,6 +40,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - on tap blueButton
     @IBAction func blueButton(_ sender: UIButton) {
         if viewFlag == true {
             self.view.backgroundColor = .blue
@@ -58,6 +60,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - on tap yellowButton
     @IBAction func yellowButton(_ sender: UIButton) {
         if viewFlag == true {
             self.view.backgroundColor = .yellow
@@ -77,6 +80,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // MARK: - on tap blackButton
     @IBAction func blackButton(_ sender: UIButton) {
         if viewFlag == true {
             self.view.backgroundColor = .black
