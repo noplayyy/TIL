@@ -109,5 +109,5 @@
 ![51](./images/51.png)
 - 또한 drag를 한 상태에서 option키를 누르면 현 상황과 맞춰서 constraint를 준다.
 
-> 
+> 해본 결과 후기 - constraint 주는 게 보통 일은 아니다.. 다신 code를 버리진 않을 것이다ㅜㅜ 😢 Code 그리워 ㅜㅜㅜ
 
