@@ -12,7 +12,7 @@ import DTGradientButton
 
 class ViewController: UIViewController {
 
-    let colors = [UIColor.rgb(red: 181, green: 160, blue: 255), UIColor.rgb(red: 143, green: 141, blue: 255), UIColor.rgb(red: 191, green: 204, blue: 255)];
+    let colors = [UIColor.rgb(red: 175, green: 157, blue: 242), UIColor.rgb(red: 104, green: 94, blue: 255), UIColor.rgb(red: 191, green: 204, blue: 255)];
     
     lazy var Button = UIButton().then {
         $0.setTitle("계속하기", for: .normal)
@@ -20,16 +20,28 @@ class ViewController: UIViewController {
         $0.setGradientBackgroundColors(colors, direction: .toRight, for: .normal)
         
     }
+    
+    lazy var btn = UIButton().then {
+        $0.setImage(UIImage(named: "dd"), for: .normal)
+        $0.layer.cornerRadius = 15
+        $0.alpha = 0.5
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        Button.layer.cornerRadius = 15
-        view.addSubview(Button)
-        Button.snp.makeConstraints { make in
+//        Button.layer.cornerRadius = 15
+//        view.addSubview(Button)
+//        Button.snp.makeConstraints { make in
+//            make.center.equalToSuperview()
+//            make.width.equalTo(self.view.frame.width/1.34)
+//            make.height.equalTo(self.view.frame.height/16.24)
+//        }
+        view.addSubview(btn)
+        btn.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.width.equalTo(self.view.frame.width/1.34)
-            make.height.equalTo(self.view.frame.height/16.24)
         }
     }
+    
 
 
 }
