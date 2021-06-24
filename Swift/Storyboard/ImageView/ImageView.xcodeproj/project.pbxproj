@@ -13,6 +13,7 @@
 		AA80A6C5268415B200CDA0A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA80A6C3268415B200CDA0A8 /* Main.storyboard */; };
 		AA80A6C7268415B400CDA0A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA80A6C6268415B400CDA0A8 /* Assets.xcassets */; };
 		AA80A6CA268415B400CDA0A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA80A6C8268415B400CDA0A8 /* LaunchScreen.storyboard */; };
+		AA80A6D22684168200CDA0A8 /* EZY_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = AA80A6D12684168200CDA0A8 /* EZY_Image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AA80A6C6268415B400CDA0A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA80A6C9268415B400CDA0A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA80A6CB268415B400CDA0A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA80A6D12684168200CDA0A8 /* EZY_Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EZY_Image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		AA80A6BC268415B200CDA0A8 /* ImageView */ = {
 			isa = PBXGroup;
 			children = (
+				AA80A6D12684168200CDA0A8 /* EZY_Image.png */,
 				AA80A6BD268415B200CDA0A8 /* AppDelegate.swift */,
 				AA80A6BF268415B200CDA0A8 /* SceneDelegate.swift */,
 				AA80A6C1268415B200CDA0A8 /* ViewController.swift */,
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA80A6CA268415B400CDA0A8 /* LaunchScreen.storyboard in Resources */,
+				AA80A6D22684168200CDA0A8 /* EZY_Image.png in Resources */,
 				AA80A6C7268415B400CDA0A8 /* Assets.xcassets in Resources */,
 				AA80A6C5268415B200CDA0A8 /* Main.storyboard in Resources */,
 			);
