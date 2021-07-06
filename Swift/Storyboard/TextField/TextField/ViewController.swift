@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var memo: UITextView!
     @IBOutlet weak var pwTextField: UITextField!
     
@@ -25,12 +26,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showAlert(_ sender: Any) {
-        let message = "제출 완료"
-        
-        let alert = UIAlertController(title: "Submit", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Submit", message: "제출 완료", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
+        clearText()
+    }
+    
+    func clearText(){
+        idTextField.text = ""
+        pwTextField.text = ""
+        memo.text = ""
     }
 }
 

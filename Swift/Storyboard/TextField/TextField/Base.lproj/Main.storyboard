@@ -79,6 +79,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="idTextField" destination="ctq-MM-srJ" id="oPA-mE-9Vw"/>
                         <outlet property="memo" destination="Oy6-va-1E3" id="6en-Gl-Ug7"/>
                         <outlet property="pwTextField" destination="PVX-e1-9vd" id="4No-UQ-St5"/>
                     </connections>
