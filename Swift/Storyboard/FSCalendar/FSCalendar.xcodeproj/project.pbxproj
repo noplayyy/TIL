@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		235C6BF9385BC9A31150D9ED /* Pods_FSCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AFEC2F4D4590B3AABEB812F /* Pods_FSCalendar.framework */; };
 		AA58565D269DACB1000C4185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58565C269DACB1000C4185 /* AppDelegate.swift */; };
 		AA58565F269DACB1000C4185 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA58565E269DACB1000C4185 /* SceneDelegate.swift */; };
 		AA585661269DACB1000C4185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA585660269DACB1000C4185 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62101F1F50D5ED8971E08BCA /* Pods-FSCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSCalendar.release.xcconfig"; path = "Target Support Files/Pods-FSCalendar/Pods-FSCalendar.release.xcconfig"; sourceTree = "<group>"; };
+		97BCD68CBC1672E0BB141928 /* Pods-FSCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FSCalendar.debug.xcconfig"; path = "Target Support Files/Pods-FSCalendar/Pods-FSCalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		9AFEC2F4D4590B3AABEB812F /* Pods_FSCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FSCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA585659269DACB1000C4185 /* FSCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA58565C269DACB1000C4185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA58565E269DACB1000C4185 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				235C6BF9385BC9A31150D9ED /* Pods_FSCalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96C185A72332DE5B04D70872 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9AFEC2F4D4590B3AABEB812F /* Pods_FSCalendar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA585650269DACB1000C4185 = {
 			isa = PBXGroup;
 			children = (
 				AA58565B269DACB1000C4185 /* FSCalendar */,
 				AA58565A269DACB1000C4185 /* Products */,
+				FF05E0D37B92953182DB33DE /* Pods */,
+				96C185A72332DE5B04D70872 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,16 @@
 			path = FSCalendar;
 			sourceTree = "<group>";
 		};
+		FF05E0D37B92953182DB33DE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97BCD68CBC1672E0BB141928 /* Pods-FSCalendar.debug.xcconfig */,
+				62101F1F50D5ED8971E08BCA /* Pods-FSCalendar.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA58566D269DACB5000C4185 /* Build configuration list for PBXNativeTarget "FSCalendar" */;
 			buildPhases = (
+				87B26E22619C7835DC7EAC0C /* [CP] Check Pods Manifest.lock */,
 				AA585655269DACB1000C4185 /* Sources */,
 				AA585656269DACB1000C4185 /* Frameworks */,
 				AA585657269DACB1000C4185 /* Resources */,
+				899B07CF19F4A9499696F00E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		87B26E22619C7835DC7EAC0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FSCalendar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		899B07CF19F4A9499696F00E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FSCalendar/Pods-FSCalendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FSCalendar/Pods-FSCalendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FSCalendar/Pods-FSCalendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA585655269DACB1000C4185 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		AA58566E269DACB5000C4185 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97BCD68CBC1672E0BB141928 /* Pods-FSCalendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		AA58566F269DACB5000C4185 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62101F1F50D5ED8971E08BCA /* Pods-FSCalendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
