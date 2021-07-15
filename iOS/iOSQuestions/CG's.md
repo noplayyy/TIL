@@ -77,3 +77,5 @@ iOS에서는 "위치"를 알아야 사각형을 그릴 수 있기 때문이다.
 ![CGRect2](./images/CGRect2.png)
 
 위 그림과 같이 위치를 CGPoint, 크기 즉 너비와 높이는 CGSize로 나타내는 것이다.
+
+[Reference](https://zeddios.tistory.com/201)
