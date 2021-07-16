@@ -8,7 +8,7 @@ A structure that contains a point in a two-dimensional coordinate system.
 2차원 좌표계의 점을 포함하는 구조체
 ```
 
-x, y축 점을 찍은 것 처럼 표현햐기 위해서 사용한다.
+x, y축 점을 찍은 것 처럼 표현하기 위해서 사용한다.
 
 ```swift
 public static CGPoint {
