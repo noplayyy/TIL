@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		AAADFD6326AC0C6A000FBCCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAADFD6126AC0C6A000FBCCA /* Main.storyboard */; };
 		AAADFD6526AC0C6D000FBCCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAADFD6426AC0C6D000FBCCA /* Assets.xcassets */; };
 		AAADFD6826AC0C6D000FBCCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAADFD6626AC0C6D000FBCCA /* LaunchScreen.storyboard */; };
+		AAADFD7026AC0D62000FBCCA /* InTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAADFD6F26AC0D62000FBCCA /* InTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		AAADFD6426AC0C6D000FBCCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAADFD6726AC0C6D000FBCCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAADFD6926AC0C6D000FBCCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAADFD6F26AC0D62000FBCCA /* InTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTextView.swift; sourceTree = "<group>"; };
 		BEA7633BEDB320EE09C10799 /* Pods-MakeViewInText.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeViewInText.release.xcconfig"; path = "Target Support Files/Pods-MakeViewInText/Pods-MakeViewInText.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +58,6 @@
 				7F71FA131137092A2BE06250 /* Pods-MakeViewInText.debug.xcconfig */,
 				BEA7633BEDB320EE09C10799 /* Pods-MakeViewInText.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,6 +89,7 @@
 				AAADFD6426AC0C6D000FBCCA /* Assets.xcassets */,
 				AAADFD6626AC0C6D000FBCCA /* LaunchScreen.storyboard */,
 				AAADFD6926AC0C6D000FBCCA /* Info.plist */,
+				AAADFD6F26AC0D62000FBCCA /* InTextView.swift */,
 			);
 			path = MakeViewInText;
 			sourceTree = "<group>";
@@ -208,6 +210,7 @@
 			files = (
 				AAADFD6026AC0C6A000FBCCA /* ViewController.swift in Sources */,
 				AAADFD5C26AC0C6A000FBCCA /* AppDelegate.swift in Sources */,
+				AAADFD7026AC0D62000FBCCA /* InTextView.swift in Sources */,
 				AAADFD5E26AC0C6A000FBCCA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
