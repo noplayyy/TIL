@@ -20,16 +20,25 @@
                                 <rect key="frame" x="162" y="366" width="90" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="YELLOW"/>
+                                <connections>
+                                    <action selector="touchYellow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y2t-8y-RcD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XJa-ly-BsW">
                                 <rect key="frame" x="162" y="431" width="90" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="PURPLE"/>
+                                <connections>
+                                    <action selector="touchPurple:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbY-cf-hpt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIW-eE-X3v">
                                 <rect key="frame" x="162" y="498" width="90" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="ORANGE"/>
+                                <connections>
+                                    <action selector="touchOrange:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UNZ-Ik-8Qx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

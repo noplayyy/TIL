@@ -13,9 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var purpleButton: UIButton!
     @IBOutlet weak var orangeButton: UIButton!
     
+    var yellowFlag = false
+    var purpleFlag = false
+    var orangeFlag = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         configureUI()
     }
 
@@ -41,6 +44,41 @@ class ViewController: UIViewController {
         orangeButton.layer.cornerRadius = 10
     }
 
+    @IBAction func touchYellow(_ sender: UIButton) {
+        if yellowFlag == false {
+            yellowButton.backgroundColor = .Yellow
+            yellowButton.setTitleColor(.white, for: .normal)
+            yellowFlag = true
+        } else {
+            yellowButton.backgroundColor = .white
+            yellowButton.setTitleColor(.Yellow, for: .normal)
+            yellowFlag = false
+        }
+    }
+    
+    @IBAction func touchPurple(_ sender: UIButton) {
+        if purpleFlag == false {
+            purpleButton.backgroundColor = .Purple
+            purpleButton.setTitleColor(.white, for: .normal)
+            purpleFlag = true
+        } else {
+            purpleButton.backgroundColor = .white
+            purpleButton.setTitleColor(.Purple, for: .normal)
+            purpleFlag = false
+        }
+    }
+    
+    @IBAction func touchOrange(_ sender: UIButton) {
+        if orangeFlag == false {
+            orangeButton.backgroundColor = .Orange
+            orangeButton.setTitleColor(.white, for: .normal)
+            orangeFlag = true
+        } else {
+            orangeButton.backgroundColor = .white
+            orangeButton.setTitleColor(.Orange, for: .normal)
+            orangeFlag = false
+        }
+    }
 }
 
 extension UIColor{
