@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         scrollView.addSubview(topButton)
         
         let bottomButton = UIButton(frame: CGRect(x: 20, y: 2000, width: 100, height: 100))
-        topButton.backgroundColor = .blue
+        bottomButton.backgroundColor = .blue
         scrollView.addSubview(bottomButton)
         
         scrollView.contentSize = CGSize(width: self.view.frame.width, height: 2200)
