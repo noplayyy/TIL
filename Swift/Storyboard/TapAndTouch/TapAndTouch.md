@@ -27,3 +27,40 @@ START. 우선 프로젝트를 생성하고 멀티 터치를 활성화 시킨다.
 ![storyboard](./images/3.png)
 
 3. 빈 Label 3개를 각각 `OutLet 변수`로 추가해준다.
+
+4. 코드를 작성해준다.
+
+```swift
+    // 터치가 시작 됐을 때
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first! as UITouch // 발생한 터치 이벤트 가져옴
+
+        textMessage.text = "터치 시작"
+        textTap.text = String(touch.tapCount) // touches 세트 안에 포함된 터치 수 출력
+        textTouch.text = String(touches.count) // 터치 객체 중 첫번째 객체에서 탭의 개수 가져옴
+    }
+
+    // 터치된 손가락이 움직였을 때
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first! as UITouch
+
+        textMessage.text = "움직임"
+        textTap.text = String(touch.tapCount)
+        textTouch.text = String(touches.count)
+    }
+
+    // 화면에서 손가락이 떨어졌을 때
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first! as UITouch
+
+        textMessage.text = "터치 끝"
+        textTap.text = String(touch.tapCount)
+        textTouch.text = String(touches.count)
+    }
+```
+
+5. 실행한 후 정상적으로 작동하는 지 확인하기!
+
+> 간단하게 swift 내의 함수들을 이용해 Tap과 Touch에 대해 알아보았다!
+
+[Reference](https://moonibot.tistory.com/50)
