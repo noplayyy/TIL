@@ -13,9 +13,12 @@
 		AA881D8926BBBF5D00C04028 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA881D8726BBBF5D00C04028 /* Main.storyboard */; };
 		AA881D8B26BBBF6000C04028 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA881D8A26BBBF6000C04028 /* Assets.xcassets */; };
 		AA881D8E26BBBF6000C04028 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA881D8C26BBBF6000C04028 /* LaunchScreen.storyboard */; };
+		CCFB257AC0C31DE87471B6D5 /* Pods_buttonYPosition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED0172AA96B992EAD672A14 /* Pods_buttonYPosition.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D13AB106DB861A3EE48B78A /* Pods-buttonYPosition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buttonYPosition.release.xcconfig"; path = "Target Support Files/Pods-buttonYPosition/Pods-buttonYPosition.release.xcconfig"; sourceTree = "<group>"; };
+		6ED0172AA96B992EAD672A14 /* Pods_buttonYPosition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_buttonYPosition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA881D7E26BBBF5D00C04028 /* buttonYPosition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = buttonYPosition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA881D8126BBBF5D00C04028 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA881D8326BBBF5D00C04028 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		AA881D8A26BBBF6000C04028 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA881D8D26BBBF6000C04028 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA881D8F26BBBF6000C04028 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9B1D4A0781912675D9488E6 /* Pods-buttonYPosition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-buttonYPosition.debug.xcconfig"; path = "Target Support Files/Pods-buttonYPosition/Pods-buttonYPosition.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCFB257AC0C31DE87471B6D5 /* Pods_buttonYPosition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12A20FBD095E319B6879E9A4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E9B1D4A0781912675D9488E6 /* Pods-buttonYPosition.debug.xcconfig */,
+				4D13AB106DB861A3EE48B78A /* Pods-buttonYPosition.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AA881D7526BBBF5D00C04028 = {
 			isa = PBXGroup;
 			children = (
 				AA881D8026BBBF5D00C04028 /* buttonYPosition */,
 				AA881D7F26BBBF5D00C04028 /* Products */,
+				12A20FBD095E319B6879E9A4 /* Pods */,
+				AECF9CB936AAE5C65E9E9CC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = buttonYPosition;
 			sourceTree = "<group>";
 		};
+		AECF9CB936AAE5C65E9E9CC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6ED0172AA96B992EAD672A14 /* Pods_buttonYPosition.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA881D9226BBBF6000C04028 /* Build configuration list for PBXNativeTarget "buttonYPosition" */;
 			buildPhases = (
+				5F1A7DB7F9F4100DB4B985BC /* [CP] Check Pods Manifest.lock */,
 				AA881D7A26BBBF5D00C04028 /* Sources */,
 				AA881D7B26BBBF5D00C04028 /* Frameworks */,
 				AA881D7C26BBBF5D00C04028 /* Resources */,
+				D002ECA8CE7C3E58122C6661 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F1A7DB7F9F4100DB4B985BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-buttonYPosition-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D002ECA8CE7C3E58122C6661 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buttonYPosition/Pods-buttonYPosition-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-buttonYPosition/Pods-buttonYPosition-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-buttonYPosition/Pods-buttonYPosition-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA881D7A26BBBF5D00C04028 /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		AA881D9326BBBF6000C04028 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9B1D4A0781912675D9488E6 /* Pods-buttonYPosition.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		AA881D9426BBBF6000C04028 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D13AB106DB861A3EE48B78A /* Pods-buttonYPosition.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
