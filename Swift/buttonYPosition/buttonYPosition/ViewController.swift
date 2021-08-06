@@ -57,12 +57,17 @@ class ViewController: UIViewController {
     
     @objc // 키보드가 보이면 버튼 올리기
     func keyboardWillShow(_ sender: Notification) {
-        YButton.frame.origin.y = self.view.frame.height/2
+        var keyboardHeight: CGFloat = CGFloat(0)
+        if let keyboardFrame: NSValue = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            keyboardHeight = keyboardRectangle.height
+        }
+        YButton.frame.origin.y -= keyboardHeight
     }
 
     @objc // 키보드가 숨겨지면 다시 원 상태
     func keyboardWillHide(_ sender: Notification) {
-        YButton.frame.origin.y = self.view.frame.height - YButton.frame.height - self.view.frame.height/20
+        YButton.frame.origin.y = self.view.frame.height - YButton.frame.height - self.view.frame.height/32.48
     }
         
     // 다른 곳을 터치하면 textField 포인트 사라짐
