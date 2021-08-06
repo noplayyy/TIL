@@ -51,7 +51,7 @@ class ViewController: UIViewController {
             make.left.equalToSuperview().offset(self.view.frame.width/17)
             make.centerX.equalToSuperview()
             make.height.equalToSuperview().dividedBy(16.24)
-            make.bottom.equalToSuperview().offset(self.view.frame.height/20 * -1)
+            make.bottom.equalToSuperview().offset(self.view.frame.height/32.48 * -1)
         }
     }
     
