@@ -7,12 +7,25 @@
 - `UITextField`, `UIButton` 배치를 완료했다는 전제하에 진행한다.
 - UITextField는 `textField`, UIButton은 `YButton`로 선언했다.
 
+`keyboardWillShow`, `keyboardWillHide` 두 가지 function을 이용해 키보드가 보일 때, 보이지 않을 때 각각 변화를 주는 것이다.
+
+
+다음은 `keyboardWillShow` 함수로 `YButton`의 `y` 위치를 올려주는 코드이다.
 ```swift
 @objc
 func keyboardWillShow(_ sender: Notification) {
     YButton.frame.origin.y = self.view.frame.height/1.7
 }
 ```
+### 세세하게 살펴보자🧐
+- `keyboardWillShow` function은 **키보드가 보일 때** 일어나는 이벤트를 작성한다.
+- `YButton.frame.origin.y`는 바로 읽을 수 있듯이 `YButton`의 `y` 위치 값을 말한다.
+- `self.view.frame.height/1.7`은 바로 알 수 있으니 **PASS!**
+
+
+### 한 마디로!🤔
+키보드가 보일 때 `YButton`은 `view`의 `height`를 1.7로 나눈 위치에 존재한다는 것이다.
+
 
 ```swift
 @objc
@@ -37,4 +50,10 @@ func keyboardWillHide(_ sender: Notification) {
 override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     textField.resignFirstResponder()
 }
+```
+
+```swift
+NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name:UIResponder.keyboardWillShowNotification, object: nil)
+
+NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
 ```
