@@ -121,6 +121,8 @@ func keyboardWillShow(_ sender: Notification) {
 
 키보드가 보일 때 사용자의 키보드 높이를 `keyboardHeight`에 저장하여 `y`값을 `-`하여 키보드의 상단에 `YButton`이 위치할 수 있게 한다는 것이다.
 
+<br>
+
 ## 그럼 키보드가 사라졌을 때는? 😲
 
 다음은 `keyboardWillHide` 함수로 `YButton`의 `y` 위치를 다시 내려주는 코드이다.
