@@ -9,6 +9,8 @@
 
 `keyboardWillShow`, `keyboardWillHide` 두 가지 function을 이용해 키보드가 보일 때, 보이지 않을 때 각각 변화를 주는 것이다.
 
+---
+
 ## 어떻게 사용할까? 😲
 
 `NotificationCenter`을 이용한 코드를 사용한다.
@@ -39,7 +41,7 @@ var userInfo: [AnyHashable : Any]? // Notification과 관련된 값 또는 객�
  NotificationCenter.default.post(name: NSNotification.Name("TestNotification"), object: nil, userInfo: nil)
 ```
 
-**`.post`**는 `Name`의 해당자들에게(observer) 일을 수행하라고 시킨다.
+**`.post`** 는 `Name`의 해당자들에게(observer) 일을 수행하라고 시킨다.
 
 ```swift
  // observer 등록
@@ -66,6 +68,8 @@ NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHid
 
 `NotificationCenter`에 각각 `addObserver`하여 등록된 **event**가 발생하면 `selector`에 등록된 각각의 함수들을 실행한다.
 
+<br>
+
 ## 버튼을 어떻게 올리는데? 😲
 
 아래 코드는 `keyboardWillShow` 함수로 `YButton`의 `y` 위치를 올려주는 코드이다.
@@ -86,6 +90,8 @@ func keyboardWillShow(_ sender: Notification) {
 ### 한 마디로! 🤔
 
 키보드가 보일 때 `YButton`은 `view`의 `height` 값을 1.7로 나눈 위치에 존재한다는 것이다.
+
+<br>
 
 ## 그럼 **키보드 높이** 만큼 올려주고 싶다면? 🤯
 
@@ -135,6 +141,8 @@ func keyboardWillHide(_ sender: Notification) {
 
 키보드가 사라졌을 때 `YButton`은 원래 위치하고 있던 `y`에 돌아가는 것이다.
 
+<br>
+
 ### 추가로 하나 덧붙이기 📚
 
 ```swift
@@ -144,5 +152,7 @@ override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 ```
 
 이 코드를 작성해주면 `textField` 작성 중일 때 키보드가 아닌 다른 화면을 누르면 키보드가 닫힌다.
+
+> 해 본 결과 후기 - 방법은 간단하지만 그 안에 숨어있는 원리인 **NotificationCenter**에 대해 조금 더 이해가 필요할 것 같다. 따로 또 공부하고 정리를 해봐야겠다!
 
 [Reference](https://silver-g-0114.tistory.com/106)
