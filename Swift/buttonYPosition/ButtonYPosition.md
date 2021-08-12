@@ -27,7 +27,7 @@ NotificationCenter를 통해 정보를 저장하기 위한 **구조체**이다.
 
 ```swift
 var name: Notification.Name // 알림을 식별하는 태그
-var object: Any? // 발송자가 옵저버에게 보내려고 하는 객체. 주로 발송자 객체를 전달하는 데 쓰인다
+var object: Any? // 발송자가 observer에게 보내려고 하는 객체. 주로 발송자 객체를 전달하는 데 쓰인다
 var userInfo: [AnyHashable : Any]? // Notification과 관련된 값 또는 객체의 저장소
 ```
 
