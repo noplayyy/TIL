@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         button.backgroundColor = .systemYellow
         button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10
         
         return button
     }()
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = .systemGreen
         button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 15
         
         return button
     }()
@@ -51,9 +53,6 @@ class ViewController: UIViewController {
         firstButton.frame = CGRect(x: self.view.frame.width/2 - 43, y: 250, width: 86, height: 53)
         secondButton.frame = CGRect(x: self.view.frame.width/2 - 15, y: 400, width: 30, height: 30)
         thirdButton.frame = CGRect(x: self.view.frame.width/2 - 43, y: 550, width: 86, height: 53)
-        
-        firstButton.layer.cornerRadius = 10
-        secondButton.layer.cornerRadius = 15
     }
 
 }
