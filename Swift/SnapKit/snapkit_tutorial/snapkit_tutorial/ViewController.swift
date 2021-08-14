@@ -123,6 +123,8 @@ class ViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         
+        myDarkGrayBtn.addTarget(self, action: #selector(moveGreenBoxDown), for: .touchUpInside)
+        
 //        myDarkGrayBtn.translatesAutoresizingMaskIntoConstraints = false
 //        NSLayoutConstraint.activate([
 //            myDarkGrayBtn.widthAnchor.constraint(equalToConstant: 200),
