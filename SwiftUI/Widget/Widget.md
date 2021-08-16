@@ -12,8 +12,6 @@ WidgetKit을 사용하여 앱의 아키텍처를 살펴 보자. 앱은 기본적
 
 ## 위젯의 템플릿 파일 이해
 
----
-
 ### TimelineProvider
 
 TimelineProvider는 위젯의 중요한 부분이다. 위젯에 대한 향후 업데이트의 모든 정보를 iOS에 제공한다.
