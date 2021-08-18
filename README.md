@@ -16,7 +16,7 @@
 
 #### **Programmatically**
 
-- [Button **Y Position** 조정하기](/Swift/Programmatically/ButtonYPosition/ButtonYPosition.md)
+- [Button **Y Position** 조정하기](/Swift/Programmatically/Example/ButtonYPosition.md)
 
 #### **Storyboard**
 
@@ -27,7 +27,7 @@
   - [About **AutoLayout**](/Swift/Storyboard/AutoLayout/AutoLayout.md)
   - [About **Constraint**](/Swift/Storyboard/AutoLayout/Constraint.md)
 
-- [**Tap** and **Touch**](/Swift/Storyboard/TapAndTouch/TapAndTouch.md)
+- [**Tap** and **Touch**](/Swift/Storyboard/Example/TapAndTouch.md)
 
 ### **SwiftUI**
 
