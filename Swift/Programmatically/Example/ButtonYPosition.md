@@ -17,7 +17,7 @@
 
 ### **NotificationCenter**, 그건 또 뭐야? 😵‍💫
 
-![storyboard](./images/1.png)
+![storyboard](./images/NotificationCenter.png)
 
 > NotificationCenter에 등록된 event가 발생하면 해당 event에 대한 행동을 취하는데, 보통 백그라운드 작업의 결과, 비동기 작업의 결과 등 현재 작업의 흐름과 다른 흐름의 작업으로부터 이벤트를 받을 때 사용한다.
 
