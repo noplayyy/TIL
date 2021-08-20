@@ -18,6 +18,8 @@
 
 - [Button **Y Position** 조정하기](/Swift/Programmatically/Example/ButtonYPosition.md)
 
+- [**Then**](/Swift/Programmatically/Then/Then.md)
+
 #### **Storyboard**
 
 - [What is **Storyboard**?](/Swift/Storyboard/What_is_Storyboard.md)
