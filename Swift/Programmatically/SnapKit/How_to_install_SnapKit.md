@@ -4,7 +4,7 @@
 
 CocoaPod을 이용해 설치하기 때문에 우선 Project를 생성한다.
 
-다음과 같은 순서로 iTerm에서 작성한다.
+다음과 같은 순서로 터미널에서 작성한다.
 
 ```zsh
 cd [Project 경로]
