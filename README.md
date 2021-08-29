@@ -22,6 +22,9 @@
 - [**Then** 설치하기](/Swift/Programmatically/Then/How_to_install_Then.md)
 - [**Then**](/Swift/Programmatically/Then/Then.md)
 
+- [**Request Permission**](/Swift/Programmatically/Request-Permission)
+  - [**Photo Library**](/Swift/Programmatically/Request-Permission/PhotoLibrary.md)
+
 #### **Storyboard**
 
 - [What is **Storyboard**?](/Swift/Storyboard/What_is_Storyboard.md)
