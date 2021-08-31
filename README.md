@@ -23,8 +23,9 @@
 - [**Then**](/Swift/Programmatically/Then/Then.md)
 
 - [**Request Permission**](/Swift/Programmatically/Request-Permission)
-  - [**Photo Library**](/Swift/Programmatically/Request-Permission/PhotoLibrary.md)
+  - [**Camera**](/Swift/Programmatically/Request-Permission/Camera.md)
   - [**Microphone**](/Swift/Programmatically/Request-Permission/Microphone.md)
+  - [**Photo Library**](/Swift/Programmatically/Request-Permission/PhotoLibrary.md)
 
 #### **Storyboard**
 
