@@ -17,5 +17,4 @@
 
 또한 `placeholder` 유무 차이가 있다.
 
-**TextField**는 `placeholder`가 있지만,
-**TextView**는 없다.
+**TextField**는 `placeholder`가 있지만, **TextView**는 없다.
