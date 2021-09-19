@@ -30,3 +30,15 @@ Core Animation에 대해 알아보기 전에, iOS에서 그래픽에 어떻게 �
 하지만 우리가 화면에 그리는 UIView는 레이아웃, 터치 이벤트 등 많은 작업을 처리하긴 하지만 사실은 뷰 위에 컨텐츠나 애니메이션을 그리는 행위를 **직접 하지는 않는다**.
 
 UIView는 직접 화면에 그리는 시각적 행위를 Core Animation에게 위임하는데 그게 바로 **layer**라는 CALayer 타입의 속성을 통해서 하는 것이다.
+
+### UIView에서 CALayer의 구성
+
+UIView는 **하나의 CALayer(Root)만** 가지고 있는 반면 CALayer(Root)는 **SubLayer를 여러 개** 둘 수 있다.
+
+즉, UIView의 SubView는 UIView의 CALayer(Root) 위에 얹혀 지는 것이다.
+
+그림으로 보면 아래와 같다.
+
+![UIViewInCALayer](./images/UIViewInCALayer.png)
+
+UIView에는 layer라는 CALayer 하나만 갖고 있지만, layer는 CALayer를 자신의 SubLayer로 여러 개 둘 수 있다. (마치 UIView의 계층 구조처럼)
