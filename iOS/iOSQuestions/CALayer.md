@@ -42,3 +42,18 @@ UIView는 **하나의 CALayer(Root)만** 가지고 있는 반면 CALayer(Root)�
 ![UIViewInCALayer](./images/UIViewInCALayer.png)
 
 UIView에는 layer라는 CALayer 하나만 갖고 있지만, layer는 CALayer를 자신의 SubLayer로 여러 개 둘 수 있다. (마치 UIView의 계층 구조처럼)
+
+## CALayer 사용 예제 👩‍💻
+
+### 1. 모서리를 둥굴게 만들 때
+
+```swift
+testView.layer.cornerRadius = 10
+```
+
+### 2. 테두리를 만들 때
+
+```swift
+testView.layer.borderColor = UIColor.black.cgColor
+testView.layer.borderWidth = 1
+```
