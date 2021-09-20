@@ -85,3 +85,7 @@ layerView.layer.addSublayer(layer3)
 ```
 
 ![SubLayers](./images/SubLayers.png)
+
+마치 `subView`를 한 것처럼 원하는 frame을 그릴 수 있다.
+
+물론 `UIView`로도 위와 같은 그림을 만들 수 있지만 UIView를 여러 개 생성하는 것보다, `CALayer`를 여러 개 생성하는 것이 **훨씬 더 가볍다고 한다**. 따라서 UIView보다 나은 퍼포먼스를 기대할 수 있다.
