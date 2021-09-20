@@ -45,7 +45,7 @@ UIView에는 layer라는 CALayer 하나만 갖고 있지만, layer는 CALayer를
 
 ## CALayer 사용 예제 👩‍💻
 
-### 1. 모서리를 둥굴게 만들 때
+### 1. View의 모서리를 둥굴게 만들 때
 
 ```swift
 layerView.layer.cornerRadius = 30
@@ -53,7 +53,7 @@ layerView.layer.cornerRadius = 30
 
 ![CornerRadius](./images/CornerRadius.png)
 
-### 2. 테두리를 만들 때
+### 2. View의 테두리를 만들 때
 
 ```swift
 layerView.layer.borderColor = UIColor.systemPink.cgColor
@@ -61,3 +61,27 @@ layerView.layer.borderWidth = 3
 ```
 
 ![Border](./images/Border.png)
+
+### 3. View에 CALayer를 통해 그림을 그릴 때
+
+CALayer는 자신의 SubLayer를 여러개 둘 수 있다.
+
+```swift
+let layer1: CALayer = CALayer()
+layer1.frame = .init(x: 10, y: 10, width: 50, height: 50)
+layer1.backgroundColor = UIColor.red.cgColor
+
+let layer2: CALayer = CALayer()
+layer2.frame = .init(x: 70, y: 10, width: 50, height: 50)
+layer2.backgroundColor = UIColor.blue.cgColor
+
+let layer3: CALayer = CALayer()
+layer3.frame = .init(x: 130, y: 10, width: 50, height: 50)
+layer3.backgroundColor = UIColor.yellow.cgColor
+
+layerView.layer.addSublayer(layer1)
+layerView.layer.addSublayer(layer2)
+layerView.layer.addSublayer(layer3)
+```
+
+![SubLayers](./images/SubLayers.png)
