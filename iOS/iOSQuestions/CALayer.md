@@ -48,12 +48,16 @@ UIView에는 layer라는 CALayer 하나만 갖고 있지만, layer는 CALayer를
 ### 1. 모서리를 둥굴게 만들 때
 
 ```swift
-testView.layer.cornerRadius = 10
+layerView.layer.cornerRadius = 30
 ```
+
+![CornerRadius](./images/CornerRadius.png)
 
 ### 2. 테두리를 만들 때
 
 ```swift
-testView.layer.borderColor = UIColor.black.cgColor
-testView.layer.borderWidth = 1
+layerView.layer.borderColor = UIColor.systemPink.cgColor
+layerView.layer.borderWidth = 3
 ```
+
+![Border](./images/Border.png)
