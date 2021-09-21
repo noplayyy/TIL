@@ -89,3 +89,21 @@ layerView.layer.addSublayer(layer3)
 마치 `subView`를 한 것처럼 원하는 frame을 그릴 수 있다.
 
 물론 `UIView`로도 위와 같은 그림을 만들 수 있지만 UIView를 여러 개 생성하는 것보다, `CALayer`를 여러 개 생성하는 것이 **훨씬 더 가볍다고 한다**. 따라서 UIView보다 나은 퍼포먼스를 기대할 수 있다.
+
+## CALayer의 성능 문제 해결
+
+CALayer로 애니메이션을 만드는 등 많은 효과를 넣으면 성능상에 문제를 일으켜 **속도가 현저히 저하**된다고 한다. 이때 성능 상 문제 해결을 도와주는 프로퍼티가 있다.
+
+### shouldRasterize
+
+```swift
+layerView.layer.shouldRasterize = false
+```
+
+CALayer를 그릴 때 오직 한 번만 렌더링 할 건지에 대한 여부를 지정하는 속성으로 default 값은 `false`이다.
+
+`true` = 레이어의 컨텐츠를 처음 한 번만 렌더링 하고 이후 애니메이션부턴 **재활용됨**
+
+`false(default)` = 애니메이션 될 때마다 레이어의 모양을 **다시 그림**
+
+<u>레이어의 컨텐츠가 화면 주변에서 움직이기는 하나, **모양은 변하지 않을 경우**</u> 사용하기에 적합하다.
