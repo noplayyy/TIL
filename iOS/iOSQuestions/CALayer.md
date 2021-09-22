@@ -107,3 +107,17 @@ CALayer를 그릴 때 오직 한 번만 렌더링 할 건지에 대한 여부를
 `false(default)` = 애니메이션 될 때마다 레이어의 모양을 **다시 그림**
 
 <u>레이어의 컨텐츠가 화면 주변에서 움직이기는 하나, **모양은 변하지 않을 경우**</u> 사용하기에 적합하다.
+
+### drawsAsynchronously
+
+```swift
+layerView.layer.drawsAsynchronously = false
+```
+
+CALayer를 그리는 데 필요한 CPU 작업을 Background Thread에서 수행해야하는지 여부를 지정하는 속성으로 default 값은 `false`이다.
+
+`true` = 드로잉 요청을 **Background Thread**에서 수행함
+
+`false(default)` = 드로잉 요청을 **Main Thread**에서 수행함
+
+<u>레이어의 컨텐츠를 **반복적으로 다시 그려야할 때**</u> 사용하기에 적합하다.
