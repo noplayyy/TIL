@@ -55,7 +55,7 @@
 
 - [About **CG\_\_\_**](/iOS/iOSQuestions/CG's.md)
 - [**Bounds** and **Frame**](/iOS/iOSQuestions/BoundsAndFrame.md)
-- [**leading** vs **left** / **trailing** vs **right**](/iOS/iOSQuestions/leading-vs-left.md)
+- [**leading** vs **left** / **trailing** vs **right**](/iOS/iOSQuestions/leading_vs_left.md)
 - [**TextField** and **TextView**](/iOS/iOSQuestions/TextFieldAndTextView.md)
 - [**CALayer**](/iOS/iOSQuestions/CALayer.md)
 
