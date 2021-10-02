@@ -18,7 +18,7 @@ array.map(transform: T throws -> T)
 
 T type의 transform을 받아 새로운 T type의 컨테이너를 생성한다는 이야기이다.
 
-#### for-in
+### for-in
 
 ```swift
 let numArray = [1,3,5,7,9]
@@ -29,3 +29,27 @@ for num in numArray {
 print(multiArray)
 // [2, 6, 10, 14, 18]
 ```
+
+### map
+
+```swift
+let numArray = [1,3,5,7,9]
+let multiArray = numArray.map { $0 * 2 }
+print(multiArray)
+// [2, 6, 10, 14, 18]
+```
+
+코드가 짧아진 것을 느낄 수 있다.
+
+추가로 현재 map의 코드를 보면
+
+```swift
+let numArray = [1,3,5,7,9]
+let multiArray = numArray.map({ (number: Int) -> Int in
+    return number * 2
+})
+print(multiArray)
+// [2, 6, 10, 14, 18]
+```
+
+위 코드에서 **매개변수, 반환 타입, 반환 키워드(return)를 생략(축약)한 후행 클로저**이다.
