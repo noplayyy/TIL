@@ -36,3 +36,14 @@ let threeCountArray = stringAttay.filter { $0.count == 3 }
 print(threeCountArray)
 // ["대통령", "개발자", "선생님", "건물주"]
 ```
+
+위 코드는 아래의 코드에서 **매개변수, 반환 타입, 반환 키워드(return)를 생략한 후행 클로저**입니다.
+
+```swift
+let stringAttay = ["가수", "대통령", "개발자", "선생님", "의사", "검사", "건물주"]
+let threeCountArray = stringAttay.filter({ (value: String) -> Bool in
+    return value.count == 3
+})
+print(threeCountArray)
+// ["대통령", "개발자", "선생님", "건물주"]
+```
