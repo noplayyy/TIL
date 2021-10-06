@@ -16,7 +16,7 @@
 
 #### **Programmatically**
 
-- [Button **Y Position** 조정하기](/Swift/Programmatically/Example/ButtonYPosition.md)
+- [Button **Y Position** 조정하기](/Swift/Programmatically/Example/ButtonYPosition/ButtonYPosition.md)
 
 - [**SnapKit** 설치하기](/Swift/Programmatically/SnapKit/How_to_install_SnapKit.md)
 - [**Then** 설치하기](/Swift/Programmatically/Then/How_to_install_Then.md)
