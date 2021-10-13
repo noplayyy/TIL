@@ -15,6 +15,7 @@
 - [**Swift** 둘러보기](/Swift/Swift_Basic.md)
 
 #### **Higher-order-function**
+
 - [**Filter**](/Swift/Higher-order-function/Filter.md)
 - [**Map**](/Swift/Higher-order-function/Map.md)
 - [**Reduce**](/Swift/Higher-order-function/Reduce.md)
@@ -22,6 +23,8 @@
 #### **Programmatically**
 
 - [Button **Y Position** 조정하기](/Swift/Programmatically/Example/ButtonYPosition/ButtonYPosition.md)
+
+  - [**RemakeConstraint**](/Swift/Programmatically/Example/ButtonYPosition/RemakeConstraint.md)
 
 - [**SnapKit** 설치하기](/Swift/Programmatically/SnapKit/How_to_install_SnapKit.md)
 - [**Then** 설치하기](/Swift/Programmatically/Then/How_to_install_Then.md)
@@ -67,3 +70,7 @@
 #### **ETC**
 
 - [**Path** Connection](/iOS/ETC/PathConnection.md)
+
+### **ETC**
+
+- [**HTTP** Method](/ETC/HTTP-Method.md)
