@@ -4,10 +4,10 @@
 Xcode에서는 단순한 주석이 아닌 구역을 나눠 줄 수 있는 주석 기능을 제공한다
 
 ```swift
-MARK: - [test]
+MARK: - [원하는 내용 작성]
 ```
 
-test 위치에 자신이 작성하고 싶은 내용을 작성하면 (`Property`, `Lifecycle`, `Selectors` ..etc)
+자신이 작성하고 싶은 내용을 작성하면 (`MARK: - Property`, `MARK: - Lifecycle`, `MARK: - Selectors` ..etc)
 
 ![MARK](./images/mark.png)
 
