@@ -16,3 +16,26 @@ make.top.equalTo(first.snp.bottom).offset(32)
 
 ## Anchor
 
+```swift
+second.snp.makeConstraints { make in
+  make.lead.top.trailing.bottom.equalToSuperview()
+}
+```
+
+- 모든 anchor와 제약조건을 연결하는 것이 가능하다.
+
+```swift
+secode.snp.makeConstraints { make in
+  make.edges.equalToSuperview()
+}
+```
+
+- `edges`라는 속성을 사용해 위와 같이 연결 할 수 있다.
+
+```swift
+child.snp.makeConstraints { make in
+  make.edges.equalToSuperview().inset(16)
+}
+```
+
+- `inset`을 주고싶은 경우 사용할 수 있다.
