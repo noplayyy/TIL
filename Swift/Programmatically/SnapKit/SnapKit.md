@@ -16,13 +16,15 @@ make.top.equalTo(first.snp.bottom).offset(32)
 
 ## Anchor
 
+- 모든 anchor와 제약조건을 연결하는 것이 가능하다.
+
 ```swift
 second.snp.makeConstraints { make in
   make.lead.top.trailing.bottom.equalToSuperview()
 }
 ```
 
-- 모든 anchor와 제약조건을 연결하는 것이 가능하다.
+- `edges`라는 속성을 사용해 위와 같이 연결 할 수 있다.
 
 ```swift
 secode.snp.makeConstraints { make in
@@ -30,7 +32,7 @@ secode.snp.makeConstraints { make in
 }
 ```
 
-- `edges`라는 속성을 사용해 위와 같이 연결 할 수 있다.
+- `inset`을 주고싶은 경우 사용할 수 있다.
 
 ```swift
 child.snp.makeConstraints { make in
@@ -38,4 +40,43 @@ child.snp.makeConstraints { make in
 }
 ```
 
-- `inset`을 주고싶은 경우 사용할 수 있다.
+## Constraint
+
+- `multipliedBy()` & `dividedBy()`
+
+```swift
+// superview의 너비와 같게 만들고 0.7을 곱한 형태
+make.width.equalToSuperview().multipliedBy(0.7)
+
+// superview의 너비와 같게 만들고 0.7을 나눈 형태
+make.width.equalToSuperview().dividedBy(0.7)
+```
+
+- `offset()`
+
+```swift
+// 상단을 first의 하단으로 제한하고, 32만큼 offset
+make.top.equalTo(first.snp.bottom).offset(32)
+```
+
+### `offset()` vs `inset()`
+
+- **offset()**: element와의 간격에 사용.
+- **inset()**: superview와의 간격에 사용.
+
+```swift
+first.snp.makeConstraints { make in
+    make.top.equalToSuperview().offset(50)
+    make.left.equalToSuperview().offset(50)
+    make.right.equalToSuperview().offset(-50)
+    make.bottom.equalToSuperview().offset(-50)
+}
+```
+
+```swift
+first.snp.makeConstraints { make in
+    make.edges.equalToSuperview().inset(UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50))
+}
+
+//make.edges.equalToSuperview().inset(50)
+```
