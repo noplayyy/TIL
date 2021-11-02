@@ -80,3 +80,24 @@ first.snp.makeConstraints { make in
 
 //make.edges.equalToSuperview().inset(50)
 ```
+
+## 암시
+
+- constraint 기준이 되는 View의 width, point를 지정해주지 않아도 암시적으로 동일하도록 설정
+- constraint 기준이 되는 View의 값을 최대한 짧게 작성할 수 있도록 도와준다.
+
+```swift
+view.snp.makeConstraints { make in
+  make.width.equalTo(otherView.snp.width)
+  make.centerX.equalTo(otherView.snp.centerX)
+}
+
+view.snp.makeConstraints { make in
+  make.width.equalTo(otherView)
+  make.centerX.equalTo(otherView)
+}
+
+view.snp.makeConstraints { make in
+  make.width.centerX.equalTo(otherView)
+}
+```
