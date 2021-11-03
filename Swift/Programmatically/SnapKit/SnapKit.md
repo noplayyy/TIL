@@ -101,3 +101,45 @@ view.snp.makeConstraints { make in
   make.width.centerX.equalTo(otherView)
 }
 ```
+
+## updateConstraint
+
+- constraint 기준이 될 기존에 지정한 view가 바뀌는게 아닌 constant value만 업데이트 하고 싶은 경우
+
+```swift
+extension ViewController {
+  override func willTransition(
+    to newCollection: UITraitCollection,
+    with coordinator: UIViewControllerTransitionCoordinator
+    ) {
+    super.willTransition(to: newCollection, with: coordinator)
+
+    // 현재 방향
+    let isPortrait = UIDevice.current.orientation.isPortrait
+
+    // 방향에 따른 label 높이 값 조정
+    test.snp.updateConstraints { make in
+      make.height.equalTo(isPortrait ? 45 : 65)
+    }
+
+    // 방향에 따른 font 크기 값 조정
+    test.font = UIFont.systemFont(ofSize: isPortrait ? 20 : 32, weight: .light)
+  }
+}
+```
+
+## remakeConstraint
+
+- constant value만 변경되는게 아닌 기준이 될 view도 바뀌는 경우
+- 기본에 존재하던 constraints 삭제
+
+```swift
+test.snp.remakeConstraints { make in
+  make.top.equalTo(view.safeAreaLayoutGuide)
+  make.width.equalToSuperview().multipliedBy(0.5)
+  make.height.equalTo(32)
+  make.leading.equalToSuperview()
+}
+```
+
+#### `lessThanOrEqualTo`, `priority` 라는 속성도 있다.
