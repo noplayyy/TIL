@@ -143,3 +143,6 @@ test.snp.remakeConstraints { make in
 ```
 
 #### `lessThanOrEqualTo`, `priority` 라는 속성도 있다.
+
+- lessThanOrEqualTo() 추가하여 사용
+- priority() 추가하여 사용
