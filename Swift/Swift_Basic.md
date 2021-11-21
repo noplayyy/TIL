@@ -2,8 +2,6 @@
 
 ### 변수와 상수
 
----
-
 변수 variable는 값을 수정할 수 있고, 상수 constant는 그렇지 않다. Swift에서는 언제 어디서 값이 어떻게 바뀔지 모르는 변수보다는 상수를 사용하는 것을 권장한다. 그래야 안전하다.
 
 변수는 `var` 로 선언하고 상수는 `let` 으로 선언한다.
@@ -127,10 +125,9 @@ var capitals = [String: String]()
 
 타입 뒤에 괄호 `()` 를 쓰는 것은 생성자 Initializer를 호출하는 것이다.
 
+---
 
 ### 조건문과 반복문
-
----
 
 조건을 검사할 때에는 `if` , `switch` 를 쓴다. 아래 코드는 `if` 를 사용한 예시이다.
 
@@ -231,6 +228,8 @@ while i < 100 {
 }
 ```
 
+---
+
 ## 옵셔널 (Optional)
 
 Swift가 가지고 있는 가장 큰 특징 중 하나가 바로 옵셔널 Optional 이다. 직역하면 '선택적인'이라는 뜻이 되는데, 값이 있을 수도 없을 수도 있는 것을 나타낸다.
@@ -280,9 +279,9 @@ Optional
 `-- nil
 ```
 
-### 옵셔널 바인딩 (Optional Binding)
-
 ---
+
+### 옵셔널 바인딩 (Optional Binding)
 
 그럼 옵셔널의 값을 가져오고 싶은 경우에는 어떻게 하면 될까? 이 때 사용하는 것이 바로 옵셔널 바인딩 Optional Binding이다.
 
@@ -344,9 +343,9 @@ if let age = optionalAge {
 }
 ```
 
-### 옵셔널 체이닝 (Optional Chaining)
-
 ---
+
+### 옵셔널 체이닝 (Optional Chaining)
 
 Swift 코드를 간결하게 만들어주는 많은 요소들이 있는데, 옵셔널 체이닝 Optional Chaining을 알게되면 다른 프로그래밍 언어가 조금 불편하게 느껴지는 경우가 생긴다.
 
@@ -399,9 +398,9 @@ let isEmptyArray = array?.isEmpty == true
 
 `array?.isEmpty` 의 결과로 나올 수 있는 값은 `nil` , `true` , `false` 가 된다. `isEmpty` 의 반환값은 `Bool` 인데, 옵셔널 체이닝으로 인해 `Bool?` 을 반환하도록 바뀐 것이다. 따라서 값이 실제로 `true` 인지를 확인하려면, `==true` 를 해주어야한다.
 
-### 옵셔널 벗기기
-
 ---
+
+### 옵셔널 벗기기
 
 옵셔널을 사용할 때마다 옵셔널 바인딩을 하는 것이 가장 바람직하다. 하지만, 개발을 하다보면 분명히 값이 존재할 것임에도 불구하고 옵셔널로 사용해야 하는 경우가 종종 있다. 이럴 때에는 옵셔널에 값이 있다고 가정하고 값에 바로 접근할 수 있도록 도와주는 키워드인 `!` 를 붙여서 사용하면 된다.
 
@@ -421,9 +420,9 @@ print(optionalEmail!) // 런타임 에러!
 
 런타임 에러가 발생하면 iOS 앱은 강제로 종료(크래시)된다. 그러니 굉장히 조심해서 사용해야 한다.
 
-### 암묵적으로 벗겨진 옵셔널 (Implicitly Unwrapped Optional)
-
 ---
+
+### 암묵적으로 벗겨진 옵셔널 (Implicitly Unwrapped Optional)
 
 만약, 옵셔널을 정의할 때 `?` 대신 `!` 를 붙이면 `ImplicitlyUnwrappedOptional` 이라는 옵셔널로 정의된다. 직역하면 '암묵적으로 벗겨진 옵셔널'이다.
 
@@ -445,9 +444,9 @@ print(email) // 런타임 에러!
 
 가급적이면 일반적인 옵셔널을 사용해서 정의하고, 옵셔널 바인딩 또는 옵셔널 체이닝을 통해 값에 접근하는 것이 더 바람직하다.
 
-## 함수와 클로저
-
 ---
+
+## 함수와 클로저
 
 함수는 `func` 키워드를 사용해서 정의한다. `->` 를 사용해서 함수의 반환 타입을 지정한다.
 
@@ -543,9 +542,9 @@ hello("연주", "노")
 
 `(Stirng) -> String` 이 `(String, String) -> String` 으로 바뀌었다. 문자열 두 개를 받아서 문자열을 반환하는 의미이다.
 
-### 클로저(Closure)
-
 ---
+
+### 클로저(Closure)
 
 클로저 Closure를 사용하면 바로 위에 작성한 코드를 조금 더 간결하게 만들 수 있다. 클로저는 중괄호(`{}`)로 감싸진 '실행 가능한 코드 블럭'이다.
 
@@ -635,9 +634,9 @@ let evens = numbers.filter { $0 % 2 == 0 }
 print(evens) // [2, 6, 8, 4]
 ```
 
-### 클로저 활용하기
-
 ---
+
+### 클로저 활용하기
 
 클로저는 Swift의 굉장히 많은 곳에서 사용된다. 바로 위에서 예시를 든 것 처럼 `sort()` 나 `filter()` 와 같은 배열에 많이 쓰인다. 대표적인 메서드로는 `sort()` , `filter()` , `map()` , `reduce()` 가 있다. `sort()` 와 `filter()` 는 바로 위에서 써봤으니 `map()` 과 `reduce()` 에 대해서 살펴보자.
 
@@ -656,9 +655,9 @@ arr.reduce(0) { $0 + $1 } // 28
 
 첫 번째 인자로 주어진 0부터 시작해서, 각 요소들과의 주어진 클로저에 대한 실행 결과를 바로 다음 요소와 실행합니다. 처음에는 0과 1을 더해서 1, 그 결과인 1과 3을 더해서 4, 그리고 4와 6을 더해서 10, 10과 2를 더해서 12, 12와 7을 더해서 19, 그리고 19와 9를 더해서 28이 반환된다.
 
-### 클래스와 구조체
-
 ---
+
+### 클래스와 구조체
 
 클래스 Class는 `class` 로 정의하고, 구조체 Structure는 `struct` 로 정의한다.
 
@@ -731,9 +730,9 @@ coffee1.name = "바닐라 라떼" // coffee1의 이름을 바꿔도
 coffee.name // coffee2는 완전히 별개이기 때문에 이름이 바뀌지 않는다. (nil)
 ```
 
-### 생성자 (Initializer)
-
 ---
+
+### 생성자 (Initializer)
 
 클래스와 구조체 모두 생성자를 가지고 있다. 생성자에서는 속성의 초깃값을 지정할 수 있다.
 
@@ -853,9 +852,9 @@ class Dog {
 }
 ```
 
-### 속성 (Properties)
-
 ---
+
+### 속성 (Properties)
 
 속성은 크게 두 가지로 나뉜다. 값을 가지는 속성 Stored Property과 계산되는 속성 Computed Property이다. 쉽게 말하면 속성이 값 자체를 가지고
 
@@ -928,9 +927,9 @@ struct Hex {
 
 `willSet` 과 `didSet` 은 일반적으로 어떤 속성의 값이 바뀌었을 때 UI를 업데이트하거나 특정 메서드를 호출하는 등의 역할을 할 때에 사용된다.
 
-## 튜플 (Tuple)
-
 ---
+
+## 튜플 (Tuple)
 
 튜플 Tuple은 어떠한 값들의 묶음이다. 배열과 비슷하다고 볼 수 있지만, 배열과는 다르게 길이가 고정되어 있다. 값에 접근할 때도 `[]` 대신 `.` 을 사용한다.
 
@@ -994,9 +993,9 @@ let(_, lattePrice) = coffeeInfo(for: "라떼")!
 latteePrice // 5600
 ```
 
-## Enum
-
 ---
+
+## Enum
 
 열거라는 뜻을 가진 Enumeration에서 따온 용어이다. 한글로 번역할 때에는 열거형이라는 말을 많이 사용한다. 1월부터 12월까지를 `enum` 으로 한 번 정의해보자.
 
@@ -1108,9 +1107,9 @@ func doSomething(with spoon: Spoon) {
 doSomething(with: .silver) // 함수 정의에 타입 어노테이션이 있기 때문에 생략
 ```
 
-### 연관 값 (Associated Values)을 가지는 Enum
-
 ---
+
+### 연관 값 (Associated Values)을 가지는 Enum
 
 Enum은 연관 값 Associated Values을 가질 수 있습니다. 아래 예시는 어떤 API에 대한 에러를 정의한 것인데요. `invalidParameter` 케이스는 필드 이름과 메시지를 가지도록 정의되었다.
 
@@ -1141,9 +1140,9 @@ default:
 }
 ```
 
-### 사실 옵셔널은 Enum이다!
-
 ---
+
+### 사실 옵셔널은 Enum이다!
 
 실제로는 이렇게 생겼다.
 
@@ -1173,6 +1172,8 @@ default:
 	print("어르신")
 }
 ```
+
+---
 
 ## 프로토콜(Protocol)
 
@@ -1242,10 +1243,9 @@ protocol Sendable: Messagable {
 
 `Sendable`은 `Messagable`을 기본적으로 따르는 프로토콜이다. 따라서, `Sendable`을 적용하려면 `var message: String? { get }`을 정의해주어야 한다.
 
+---
 
 ### Any와 AnyObject
-
----
 
 `Any` 는 모든 타입에 대응한다. `AnyObject` 는 모든 객체에 대응한다.
 
@@ -1257,7 +1257,6 @@ let anyInstance: AnyObject = Dog()
 ```
 
 `Any` 와 `AnyObject` 는 프로토콜이다. Swift에서 사용 가능한 모든 타입은 `Any` 를 따르도록 설계되었고, 모든 클래스들에는 `AnyObject` 프로토콜이 적용되어 있다.
-
 
 ### 타입 캐스팅 (Type Casting)
 
@@ -1279,10 +1278,9 @@ if let number = anyNumber as? Int {
 }
 ```
 
+---
 
 ### 타입 검사
-
----
 
 타입 캐스팅까지는 필요 없고, 만약 어떤 값이 특정한 타입인지를 검사할 때에는 `is` 를 사용할 수 있다.
 
@@ -1293,16 +1291,17 @@ print(anyNumber is String) // false
 print(anyString is Stirng) // true
 ```
 
+---
+
 ## Swift 주요 프로토콜
 
 Swift에는 기본적으로 제공하는 기초적인 프로토콜들이 있다. 알아두면 개발할 때 굉장히 유용하게 사용할 수 있다.
 
+---
 
 ### CustomStringConvertible
 
----
-
-자기 자신을 표현하는 문자열을 정의한다. `print()` , `String()`  또는 `"\()"` 에서 사용될 때의 값입니다. `CustomStringConvertible` 의 정의는 아래와 같이 생겼다.
+자기 자신을 표현하는 문자열을 정의한다. `print()` , `String()` 또는 `"\()"` 에서 사용될 때의 값입니다. `CustomStringConvertible` 의 정의는 아래와 같이 생겼다.
 
 ```swift
 public protocol CustomStringConvertible {
@@ -1325,12 +1324,11 @@ let dog = Dog(name: "찡코")
 print(dog) // 🐶 찡코
 ```
 
+---
 
 ### ExpressibleBy
 
----
-
-우리는 지금까지 `10` 은  `Int` , `"Hi"` 는 `String` 이라고 '당연하게' 인지하고 있었다. 하지만, 엄밀히 하자면 `10` 은 원래 `Int(10)` 으로 선언되어야 하고, `"Hi"` 는 `String("Hi")` 로 선언되어야 한다. `Int` 와 `String` 모두 생성자를 가지는 구조체이기 때문이다.
+우리는 지금까지 `10` 은 `Int` , `"Hi"` 는 `String` 이라고 '당연하게' 인지하고 있었다. 하지만, 엄밀히 하자면 `10` 은 원래 `Int(10)` 으로 선언되어야 하고, `"Hi"` 는 `String("Hi")` 로 선언되어야 한다. `Int` 와 `String` 모두 생성자를 가지는 구조체이기 때문이다.
 
 이렇게, 생성자를 사용하지 않고도 생성할 수 있게 만드는 것을 리터럴이라고 한다. 직역하면 '문자 그대로'라는 뜻이다. 아래 코드는 문자 그대로 `10` , 문자 그대로 `"Hi"` , 문자 그대로 배열이고 딕셔너리이다.
 
@@ -1344,7 +1342,7 @@ let dictionary = [
 ]
 ```
 
-이 리터럴을 가능하게 해주는 프로토콜이 있다. 바로 `ExpressibleByXXXLiteral` 이다. 
+이 리터럴을 가능하게 해주는 프로토콜이 있다. 바로 `ExpressibleByXXXLiteral` 이다.
 
 `Int` 는 `ExpressibleByIntegerLiteral`을, `String`은 `ExpressibleByStringLiteral`을, `Array`는 `ExpressibleByArrayLiteral`을, `Dictionary`는 `ExpressibleByDictionaryLiteral` 프로토콜을 따르고 있다. 각 프로토콜은 리터럴 값을 받는 생성자를 정의하고 있다.
 
@@ -1368,9 +1366,9 @@ converter.dollars // 117700
 
 분명히 구조체를 만들었는데, `ExpressibleByIntegerLiteral` 을 적용하니까 `=100` 과 같은 문법을 사용할 수 있게 되었다.
 
+---
 
 ## 익스텐션 (Extension)
-
 
 Swift에서는 이미 정의된 타입에 새로운 속성이나 메서드를 추가할 수 있다. 익스텐션이라는 기능인데, `extension` 키워드를 사용해서 정의할 수 있다.
 
@@ -1389,6 +1387,5 @@ let str = "안녕하세요"
 str.length // 5
 str.reversed() // 요세하녕안
 ```
-
 
 [Reference](https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/)
