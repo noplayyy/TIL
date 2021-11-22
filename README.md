@@ -47,7 +47,7 @@
 - [**Tap** and **Touch**](/Swift/Storyboard/Example/TapAndTouch.md)
 
 #### **Error-Solution**
-- [SuperView is nil](/Swift/Error-Solution/SuperView-nil.md)
+- [SuperView가 **nil**?](/Swift/Error-Solution/SuperView-nil.md)
 
 #### **Tips**
 
