@@ -4,7 +4,6 @@ Frame과 Bounds는 **UIView**의 instance property이다.
 
 Frame과 Bounds는 모두 사각형으로 그려진다. 즉 **origin**과 **size**를 가진다.
 
-
 ## frame이란?
 
 ```
@@ -15,7 +14,6 @@ SuperView(상위뷰)의 좌표 시스템 안에서 View의 위치와 크기를 �
 
 SuperView, 상위뷰는 한 단계 상위 뷰를 의미한다.
 
-
 ## bounds란?
 
 ```
@@ -25,3 +23,9 @@ View의 위치와 크기를 자신만의 좌표 시스템 안에서 나타낸다
 ```
 
 bounds는 자신만의 좌표 시스템을 쓴다.
+
+
+|                           |             frame              |     bounds     |
+| :-----------------------: | :----------------------------: | :------------: |
+|   origin (x, y) 기준점    |      Super View의 좌표계       | 자신의 좌표계  |
+| size (width, height) 기준 | View 영역을 모두 감싸는 사각형 | View 영역 자체 |
