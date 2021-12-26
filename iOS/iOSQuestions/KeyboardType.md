@@ -57,3 +57,19 @@ typedef enum {
 static var alphabet: UIKeyboardType
 Specifies a keyboard for alphabetic entry.
 ```
+
+- **default** : 기본적인 키보드
+- **asciiCapable** : 영문만 표시되는 키보드
+- **numbersAndPunctuation** : 숫자와 특수문자가 표시되는 키보드
+- **URL** : URL을 입력할 수 있도록 `.`과 `/` 그리고 `.com`이 키보드 영역에 표시되는 키보드
+- **numberPad** : 숫자를 입력하는 키패드 형식의 키보드
+- **phonePad** : 전화번호를 입력할 수 있는 키패드 형식의 키보드
+- **namePhonePad** : 대문자 입력이 불가한 키보드
+- **emailAddress** : 이메일을 입력할 수 있도록 `@`와 `.`이 키보드 영역에 표시되는 키보드
+- **decimalPad** : 소숫점을 입력할 수 있는 키패드 형식의 키보드
+- **twitter** : 트위터 입력을 빠르게 할 수 있도록 `@`와 `#`이 추가된 키보드
+- **webSearch** : URL 및 검색어 입력에 최적화 됨 (`공백` 및 `.`표시)
+- **asciiCapableNumberPad** : Ascii 숫자가 표시되는 키보드
+- **alphabet** : = asciiCapable 더 이상 사용하지 않음
+
+[Reference](https://ikkison.tistory.com/18)
