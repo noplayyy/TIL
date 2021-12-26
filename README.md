@@ -47,6 +47,7 @@
 - [**Tap** and **Touch**](/Swift/Storyboard/Example/TapAndTouch.md)
 
 #### **Error-Solution**
+
 - [SuperView가 **nil**?](/Swift/Error-Solution/SuperView-nil.md)
 
 #### **Tips**
@@ -73,6 +74,7 @@
 - [**leading** vs **left** / **trailing** vs **right**](/iOS/iOSQuestions/leading_vs_left.md)
 - [**TextField** and **TextView**](/iOS/iOSQuestions/TextFieldAndTextView.md)
 - [**CALayer**](/iOS/iOSQuestions/CALayer.md)
+- [**Keyboard Type**](/iOS/iOSQuestions/KeyboardType.md)
 
 #### **ETC**
 
