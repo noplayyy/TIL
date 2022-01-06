@@ -61,9 +61,12 @@
 
 ### **iOS**
 
-- [**DesignPattern**](/iOS/DesignPattern/DesignPattern.md)
+- [**Architecture**](/iOS/Architecture)
 
-  - [**MVVM**](/iOS/DesignPattern/MVVM/MVVM.md)
+  - [**MVC**](/iOS/Architecture/MVC/MVC.md)
+  - [**MVVM**](/iOS/Architecture/MVVM/MVVM-Basic.md)
+  - [**MVVM**](/iOS/Architecture/MVVM/MVVM.md)
+  - [**VIPER**](/iOS/Architecture/VIPER/VIPER.md)
 
 - [**GCD**](/iOS/GCD/GCD.md)
 
