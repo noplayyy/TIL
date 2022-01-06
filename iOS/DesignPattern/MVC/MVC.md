@@ -23,3 +23,5 @@
     애플의 MVC 패턴은 기존 MVC 패턴과 다르다. View와 Controller가 강하게 연결되어 있어 View Controller가 거의 모든 일을 한다. ViewController에서는 Controller가 View의 life cycle(라이프 사이클)에 관여하기 때문에 View와 Controller를 분리하기 어렵다. 그래서 앱을 테스트할 때, Model은 따로 분리되어 테스트를 할 수 있어도 View와 Controller는 강하게 연결되어 있기 때문에 각각 테스트하기 어렵다는 단점이 있다.
 
 <img src = "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F9956104D5C9EF01C3A">
+
+[Reference](https://eunjin3786.tistory.com/31)

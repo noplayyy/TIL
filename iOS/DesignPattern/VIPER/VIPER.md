@@ -28,3 +28,5 @@ class PostListPresenter: PostListPresenterProtocol {
 	}
 }
 ```
+
+[Reference](https://eunjin3786.tistory.com/31)

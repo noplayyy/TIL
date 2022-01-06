@@ -19,3 +19,5 @@ MVC와 달리 ViewModel이 중간 다리 역할을 하고 ViewModel이 중간 �
 1. 유닛테스팅 하기 좋다
 
    ViewModel은 View에 대해 아무것도 모른다. 즉 ViewModel에는 UIKit과 관련된 코드가 없다. ( ↔ View랑 너무 친한 MVC의 Controller) ViewController와 의존성도 전혀 없다. 따라서 ViewModel을 이용해서 Model의 비즈니스 로직을 테스트해 볼 수 있다.
+
+[Reference](https://eunjin3786.tistory.com/31)
