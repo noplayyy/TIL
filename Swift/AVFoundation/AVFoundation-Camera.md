@@ -6,4 +6,6 @@
 - `ImagePickerView`의 한계점
     - CustomUI를 만들 수 없다. (Apple에서 제공하는 기본 UI를 사용해야한다.)
     - Camera 기능에 한계가 있었다.
-- 결국 `AVFoundation`를 이용하자.
+- 그렇다면.. `AVFoundation`를 이용하자!!
+
+### AVFoundation
