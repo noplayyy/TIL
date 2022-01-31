@@ -54,7 +54,7 @@
    }
    ```
 
-   답: O(1)
+   답: O(<script type="text/javascript" src="https://www.hostmath.com/Math/MathJax.js?config=OK"></script>)
 
 4. 자연수를 나눗셈 하는 코드이다. 수행 시간은?
 
