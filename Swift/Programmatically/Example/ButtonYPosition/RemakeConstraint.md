@@ -4,7 +4,7 @@
 
 ### 해결 방법
 
-`remakeConstraint`를 사용하자!
+`remakeConstraints`를 사용하자!
 
 ```swift
 @objc
