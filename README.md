@@ -24,7 +24,7 @@
 
 - [Button **Y Position** 조정하기](/Swift/Programmatically/Example/ButtonYPosition/ButtonYPosition.md)
 
-  - [**RemakeConstraint**](/Swift/Programmatically/Example/ButtonYPosition/RemakeConstraint.md)
+  - [**RemakeConstraints**](/Swift/Programmatically/Example/ButtonYPosition/RemakeConstraints.md)
 
 - [**SnapKit** 설치하기](/Swift/Programmatically/SnapKit/How_to_install_SnapKit.md)
 - [**Then** 설치하기](/Swift/Programmatically/Then/How_to_install_Then.md)
