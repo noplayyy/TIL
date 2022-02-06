@@ -29,3 +29,7 @@ bounds는 자신만의 좌표 시스템을 쓴다.
 |   origin (x, y) 기준점    |      Super View의 좌표계       |                                                      자신의 좌표계                                                       |
 | size (width, height) 기준 | View 영역을 모두 감싸는 사각형 |                                                      View 영역 자체                                                      |
 |         사용 용도         | View의 위치와 크기를 나타낼 때 | View를 회전한 후 View의 실제 크기를 알고 싶을 때 / View 내부에 그림을 그릴 때 (drawRect) / ScrollView에서 스크롤링 할 때 |
+
+### 한 줄 정리
+
+> Bounds와 Frame 둘다 **CGRect** 타입이지만 Bounds는 **SuperView(자신의 부모뷰)의 좌표 시스템을 기준**으로 origin(좌표)을 나타내고, Frame은 **자기 자신만의 좌표 시스템을 기준**으로 origin(좌표)를 나타낸다.
