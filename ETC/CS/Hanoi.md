@@ -13,5 +13,5 @@ func honoi(n: Int, from: Character, to:Character, by:Character){
     }
 }
 
-honoi(n: 3, from: "a", to: "b", by: "c")
+honoi(n: 3, from: "a", to: "b", by: "c") // n은 원반 개수, a에서 b로 c를 거쳐서
 ```
