@@ -32,4 +32,4 @@ bounds는 자신만의 좌표 시스템을 쓴다.
 
 ### 한 줄 정리
 
-> Bounds와 Frame 둘다 **CGRect** 타입이지만 Bounds는 **SuperView(자신의 부모뷰)의 좌표 시스템을 기준**으로 origin(좌표)을 나타내고, Frame은 **자기 자신만의 좌표 시스템을 기준**으로 origin(좌표)를 나타낸다.
+> Bounds와 Frame 둘다 **CGRect** 타입이지만 Bounds는 **자기 자신만의 좌표 시스템을 기준**으로 origin(좌표)를 나타내고, Frame은 **SuperView(자신의 부모뷰)의 좌표 시스템을 기준**으로 origin(좌표)을 나타낸다.
