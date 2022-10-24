@@ -69,6 +69,7 @@ let observable2_1 = Observable.of(one, two, three)
 ```
 
 .of()로 단일요소 만들기(.just()와 동일한 결과)
+
 ```swift
 let observable3_1 = Observable.of([one, two, three])
 let observable3_2 = Observable.just([one, two, three])
@@ -77,20 +78,158 @@ let observable3_2 = Observable.just([one, two, three])
 [one, two, three]와 (one, two, three)의 차이를 주의(단일 요소인 배열, 배열이 아닌 다중 요소)
 
 3. Observable.from(): 오직 array 타입만 처리하며 각각 요소들을 하나씩 "emit"하는 기능
+
 ```swift
 let observable4= Observable.from([one, two, three])
 ```
 
 4. Observable.create()  
-클로저 형식이며 다양한 값(onNext, onCompleted, ...)을 생성할 수 있음  
-disposeBag: 쓰레기봉투
+   클로저 형식이며 다양한 값(onNext, onCompleted, ...)을 생성할 수 있음  
+   disposeBag: 쓰레기봉투
 
 ```swift
 example(of: "create") {
     let disposeBag = DisposeBag()
 
     let observable = Observable<String>.create({ (observer) -> Disposable in
-    
+
+        observable.onNext("1")
+
+        observable.onCompleted()
+
+        observable.onNext("?")
+
+        return Disposables.create()
      })
+
+     observable.subscribe{ (event) in
+        print(event)
+     }
+
+     /* print
+        next(1)
+        completed
+     */
 }
+
+// Disposeables와 subscribe 내용은 뒤에서 계속
+```
+
+5. Observable.empty()
+6. Observable.never()
+7. Observable.range(start:1, count:10)
+8. Observable.create()
+
+### Observable subscribing
+
+"옵저버에 대한 구독" 즉, 옵저버에 담긴 이벤트들을 방출(emit)하는 것이 subscribe 메소드를 사용하는 것
+
+1. observable.subscribe()
+
+- 사전 작업: Observable에 요소 추가
+
+```swift
+example(of: "subscribe") {
+    let one = 1
+    let two = 2
+    let three = 3
+
+    let observable = Observable.of(one, two, three)
+}
+```
+
+- 구독하기: subscribe
+
+```swift
+observable.subscribe { event in
+    print(event)
+
+    /*
+    --- Example of: subscribe ---
+        next(1)
+        next(2)
+        next(3)
+        completed
+    */
+}
+```
+
+.subscribe는 정수의 이벤트 객체를 파라미터로 하는 escaping 클로저 형식 메소드, 반환 값은 Disposable
+
+![Observable Subscribe](images/ObservableSubscribe.png)
+
+2. Observable.subscribe(onNext:)
+   next 요소만 처리한다는 의미(위에서 그냥 subscribe 메소드는 completed까지 출력 했지만 이것은 아닌 것을 확인)
+
+```swift
+observable.subscribe(onNext: {element in
+    print(element)
+
+    /* prints
+    1
+    2
+    3
+    */
+})
+```
+
+3. empty()로 설정된 Observable
+   subscribe()시, "completed"만 출력
+
+```swift
+ example(of: "empty") {
+     let observable = Observable<Void>.empty()
+
+     observable.subscribe(
+
+         onNext: { (element) in
+             print(element)
+     },
+
+         onCompleted: {
+             print("Completed")
+     }
+     )
+ }
+
+ /* Prints:
+  Completed
+ */
+```
+
+4. never()로 설정된 Observable
+   subscribe()시, "completed"도 출력되지 않음
+
+```swift
+ example(of: "never") {
+     let observable = Observable<Any>.never()
+
+     observable
+         .subscribe(
+             onNext: { (element) in
+                 print(element)
+         },
+             onCompleted: {
+                 print("Completed")
+         }
+     )
+ }
+```
+
+5. range()로 설정된 Observable
+   클로저에서 인수를 주목 "(i) in"
+
+```swift
+ example(of: "range") {
+
+     let observable = Observable<Int>.range(start: 1, count: 10)
+
+     observable
+         .subscribe(onNext: { (i) in
+
+             let n = Double(i)
+             let fibonacci = Int(((pow(1.61803, n) - pow(0.61803, n)) / 2.23606).rounded())
+             print(fibonacci)
+         })
+ }
 ```
