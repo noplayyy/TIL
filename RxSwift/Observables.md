@@ -348,3 +348,70 @@ example(of: "deferred") {
     }
 }
 ```
+
+### Traits
+
+코드 가독성 상승, Observable 보다 좁은 범위를 선택할 수 있음
+
+1. Single: 성공이냐, 실패냐를 따지는 one-time 일에 적합 (파일 다운로드, 디스크로딩)
+- Single(.success(value)) = .next + .completed
+- Single(.error(value))
+
+2. Completable: single과 기능이 유사하지만, value값을 emit하지 않음
+즉, 일이 제대로 됐는지만 검토할 때 사용(파일 쓰기)
+- Completable(.completed)
+- Completable(.error(value))
+
+3. Maybe: Single + Completable
+
+ex) Single
+
+```swift
+example(of: "Single") {
+    let disposeBag = DisposeBag()
+
+    enum FileReadError: Error {
+        case fileNotFound, unreadable, encodingFailed
+    }
+
+    func loadText(from name: String) -> Single<String> {
+        return Single.create{ single in
+            let disposable = Disposables.create()
+
+            guard let path = Bundle.main.path(forResource: name, ofType: "txt") else {
+                single(.error(FileReadError.fileNotFound))
+                return disposable
+            }
+
+            guard let data = FileManager.default.contents(atPath: path) else {
+                single(.error(FileReadError.unreadable))
+                return disposable
+            }
+
+            guard let contents = String(data: data, encoding: .ut8) else {
+                single(.error(FileReadError.encodingFailed))
+                return disposable
+            }
+
+            single(.success(contents))
+            return disposable
+        }
+    }
+
+    // test
+    loadText(from: "myFile")
+            .subscribe{
+                switch $0 {
+                case .success(let string):
+                    print(string)
+                case .error(let error):
+                    print(error)
+                }
+            }
+            .disposed(by: disposeBag)
+
+    // prints: fileNotFound
+    
+}
+```
+
