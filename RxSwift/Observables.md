@@ -233,3 +233,118 @@ observable.subscribe(onNext: {element in
          })
  }
 ```
+
+### disposing
+
+subscribe가 Observable안에 있는 이벤트들을 방출(emit)하는 것이라면,
+disposing은 subscribe를 취소하는 것
+
+1. dispose()
+지금은 Observalble의 이벤트가 3개 있어서 3개 출력 후 "completed"를 출력하지만, Observable의 이벤트가 무한대 등록되어 있다면 일정 수준에서 dispose()에서 종료 후 "completed" 출력
+
+```swift
+ example(of: "dispose") {
+     
+     let observable = Observable.of("A", "B", "C")
+     
+     let subscription = observable.subscribe({ (event) in
+         
+         print(event)
+     })
+     
+     subscription.dispose()
+ }
+```
+
+2. disposeBag
+dispose에 대한 리턴값을 담는 객체
+
+
+```swift
+example(of: "DisposeBag") {
+    
+    let disposeBag = DisposeBag()
+    
+    Observable.of("A", "B", "C")
+        .subscribe{
+            print($0)
+        }
+        .disposed(by: disposeBag) // subscribe로부터 방출된 리턴 값을 disposeBag에 추가
+    
+    print(disposeBag)
+    // prints : RxSwift.DisposeBag
+}
+```
+
+3. Observable.create에서의 dispose
+- completed는 작동하지 않음
+
+```swift
+enum MyError: Error {
+     case anError
+ }
+ 
+ example(of: "create") {
+     let disposeBag = DisposeBag()
+     
+     Observable<String>.create({ (observer) -> Disposable in
+         observer.onNext("1")
+         
+         observer.onError(MyError.anError)
+         
+         observer.onCompleted()
+         
+         observer.onNext("?")
+         
+         return Disposables.create()
+     })
+         .subscribe(
+             onNext: { print($0) },
+             onError: { print($0) },
+             onCompleted: { print("Completed") },
+             onDisposed: { print("Disposed") }
+     ).disposed(by: disposeBag) // 이 구문이 있는 이유 : 메로리 제거함으로써 메모리 효율확보
+ }
+ 
+ /* Prints:
+  1
+  anError
+  Disposed
+ */
+
+```
+
+코드의 흐름: 동기가 아닌 비동기이므로 주의(create 블록과 subscribe 블록 동시에 실행이라고 생각)
+
+
+4. Observable.deferred()
+deferred: 연기된  
+"Observable Factory" 개념: lazy var 변수와 같이 Observable.scribe()하는 순간 observable.deferred()가 실행
+
+```swift
+example(of: "deferred") {
+    let disposeBag = DisposeBag()
+    
+    var flip = false
+    
+    let factory: Observable<Int> = Observable.deferred(){
+        
+        flip = !flip
+        
+        if flip {
+            return Observable.of(1,2,3)
+        } else {
+            return Observable.of(4,5,6)
+        }
+    }
+    
+    for _ in 0...3 {
+        factory.subscribe(onNext: {
+            print($0, terminator: "")
+        })
+            .disposed(by: disposeBag)
+        
+        print()
+    }
+}
+```
