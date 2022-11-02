@@ -411,7 +411,58 @@ example(of: "Single") {
             .disposed(by: disposeBag)
 
     // prints: fileNotFound
-    
+
 }
 ```
 
+### Do와 debug
+
+1. Observable.do
+do 연산자는 Observable이 never이든 뭐든 간에 일단 실행
+- Observable.never() 연산자는 "completed"도 출력하지 않음
+- 기존에 never를 하면 .subscribe()가 실행되지만 "completed"가 실행되지 않아서 subscribe()를 동작했는지 유무도 알 수 없었음
+- do를 사용하면 subscribe()가 발생된지 알 수 있음
+
+```swift
+example(of: "never") {
+    let observable = Observable<Any>.never()
+    
+    let disposeBag = DisposeBag()
+    
+    // 구독했음을 알리는 print("Subscribed")
+    observable.do(
+        onSubscribe: { print("Subscribed")}
+        ).subscribe(
+            onNext: { (element) in
+                print(element)
+        },
+            onCompleted: {
+                print("Completed")
+        }
+    )
+    .disposed(by: disposeBag)
+}
+
+// prints: Subscribed
+```
+
+2. Observable.debug()
+- debug 연산자로 출력문을 통해 디버그 할 수 있음.
+콘솔창 출력 형식: "날짜 시간: \(작성한 문자열) -> <subscribe/isDisposed>"
+
+```swift
+example(of: "never") {
+    let observable = Observable<Any>.never()
+    let disposeBag = DisposeBag()
+
+    observable
+        .debug("never 확인")
+        .subscribe()
+        .disposed(by: disposeBag)
+
+    /* prints
+     2020-05-21 19:46:23.534: never 확인 -> subscribed
+     2020-05-21 19:46:23.536: never 확인 -> isDisposed
+     */
+}
+```
