@@ -31,7 +31,7 @@ if isSuccess {
 
 Promise는 아래 3가지 상태 중 하나를 가질 수 있다.
 
-![PromisesState](images/promisesState.png)
+![PromisesState](images/PromisesState.png)
 
 Promise는 한 번 fulfull이나 reject 상태가 되면 다시 상태를 바꿀 수 없다. 그렇기 때문에 수많은 observer들이 해당 promise가 resolved 되기를 기다리게 된다. 그러다가 resolved되면, fulfilled 되어 observer들에게 value를 전달하거나 rejected되어 error를 전달한다. 그리고 여러 Promise들을 체인 걸듯이 연결해서 서로 다른 스레드에서 비동기적으로 반환되는 값들을 엮어서 사용할 수도 있다.
 
