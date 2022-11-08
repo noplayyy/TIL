@@ -4,7 +4,7 @@
 
 RxSwift는 주로 사용되는 기능들 외의 다른 수많은 기능은 잘 사용되지 않을 때가 있다. 그래서 간단한 프로젝트에서는 사용되지 않는 기능들까지 pod 파일로 가지고 있어야 해서 사용해야하는 메서드에 비해 파일의 양이 방대해진다. 
 
-![BytesTime](images/Bytestime.png)
+![BytesTime](images/BytesTime.png)
 
 
 ## Installation
