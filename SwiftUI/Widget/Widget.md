@@ -23,30 +23,33 @@ public func placeholder(in context: Self.Context) -> Self.Entry
 ```swift
 public func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ())
 ```
+WidgetKit은 매개 변수에 context를 제공하므로 위젯이 갤러리에서 미리보기 되는지 여부, 위젯 패밀리 크기, 위젯의 실제 크기를 알 수 있다.
 
-WidgetKit은 매개 변수에 컨텍스트를 제공하므로 위젯이 갤러리에서 미리보기 되는지 여부, 위젯 패밀리 크기, 위젯의 실제 크기를 알 수 있다.
-
-완료는 비동기 작업을 완료했음을 시스템에 알린다.
+completion은 비동기 작업을 완료했음을 시스템에 알린다.
 
 ```swift
 public func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ())
 ```
 
-완료 시 반환해야하는 Timeline 객체는 두 개의 매개 변수를 사용한다. 타임 라인 항목 및 정책. 타임 라인 항목의 마지막 날짜 이후 또는 특정 시간 이후에 위젯 업데이트가 절대 불가능할 수 있는 방법에 대한 정책이다.
+완료 시 반환해야하는 Timeline 객체는 두 개의 매개 변수를 사용한다.
+
+Timeline 항목 및 정책, Timeline 항목의 마지막 날짜 이후 특정 시간 이후에 위젯 업데이트가 절대 불가능하게 할 수 있는 방법에 대한 정책이다.
 
 ### SimpleEntry
 
-SimpleEntry는 TimelineEntry의 프로토콜을 따르는 단순한 개체이다. 날짜는 위젯을 업데이트해야 할 때 iOS에 알려주기 때문에 중요하다. 뷰에 대한 모델을 추가 속성으로 추가하여 데이터를 위젯에 쉽게 바인딩 할 수 있다.
+SimpleEntry는 TimelineEntry의 프로토콜을 따르는 단순한 개체이다.
+날짜는 위젯을 업데이트 해야할 때 iOS에 알려주기 때문에 중요하다.
+View에 대한 모델을 추가 속성을 추가하여 데이터를 위젯에 쉽게 바인딩 할 수 있다.
 
 ### RiddleWidgetEntryView
 
-EntryView는 현재 타임 라인 항목을 매개 변수로 사용하여 홈 화면에 표시되는 위젯의 SwiftUI 보기이다.
+EntryView는 현재 타임 라인 항목을 매개 변수로 사용하여 홈 화면에 표시되는 위젯의 SwiftUI View이다.
 
 ### RiddleWidget
 
-RiddleWidget은 프로토콜 위젯을 따른다. 일부 유형의 WidgetConfiguration 본문이 있어야한다.
+RiddleWidget은 프로토콜 위젯을 따른다. 일부 유형의 WidgetConfiguration 본문이 있어야 한다.
 
-Apple SDK가 제공하는 두 가지 유형의 WidgetConfiguration이 있다. 구성 가능한 위젯을 원하지 않으므로 여기서는 StaticConfiguration을 사용한다.
+Apple SDK가 제공하는 두 가지 유형의 WidgetConfiguration이 있다. 구성 가능한 위젯을 원하지 않을 때는 StaticConfiguration을 사용한다.
 
 사용자가 구성 가능한 위젯을 원할 경우, IntentConfiguration 뿐만 아니라 Siri Intent도 생성해야한다.
 
