@@ -7,7 +7,7 @@
 - Model의 변화를 ViewModel에게 알려주면 ViewModel과 바인딩 되어있는 View가 업데이트 된다.
 - View에 들어온 Event를 ViewModel에게 알려주면 ViewModel은 Model을 업데이트 시킨다.
 
-MVC와 달리 ViewModel이 중간 다리 역할을 하고 ViewModel이 중간 다리 역할을 하고 ViewController가 View로 들어간 패턴이다. 따라서 Controller와 Model은 서로 대화할 수 없다. ViewModel을 통해야한다.
+MVC와 달리 ViewModel이 중간 다리 역할을 하고 ViewController가 View로 들어간 패턴이다. 따라서 Controller와 Model은 서로 대화할 수 없다. ViewModel을 통해야한다.
 
 > ViewModel
 
