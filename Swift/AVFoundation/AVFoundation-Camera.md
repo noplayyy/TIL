@@ -33,7 +33,7 @@ captureDevice = backCamera
 
 - AVCaptureDeviceInput: device의 입력
 - AVCapturePhotoOutput: device의 출력
-- DeviceInputdmfh input을 참조, PhotoOutput으로 output을 참조하여 captureSession에 등록
+- DeviceInput으로 input을 참조, PhotoOutput으로 output을 참조하여 captureSession에 등록
 
 ```swift
 do{
