@@ -5,7 +5,7 @@
 
 ## Storyboard란?
 
-스토리 보드는 iOS 앱의 사용자 인터페이스를 시작적으로 표햔하여 컨텐츠 화면과 화면 간의 연결을 보여주는 도구이다. 
+스토리 보드는 iOS 앱의 사용자 인터페이스를 시각적으로 표현하여 컨텐츠 화면과 화면 간의 연결을 보여주는 도구이다. 
 스토리 보드는 일련의 장면들(scenes)로 구성되며, 각 scene은 뷰 컨트롤러와 해당 뷰를 나타낸다.
 
 ![storyboard](./images/storyboard.png)
@@ -25,12 +25,12 @@ UIKit을 사용하는 앱의 인터페이스를 관리하기 위한 도구이다
 
 ![view](./images/viewcontroller.png)
 
-## UIKIT이란?
+## UIKit이란?
 
 iOS 또는 tvOS 앱을 위한 그래픽 기반의 이벤트 중심 사용자 인터페이스를 구성하고 관리하는 프레임워크이다.
 
 
-xcode 상단의 ‘+’ 모양 버튼을 누르면 IOS의 화면을 구성하는 ‘오브젝트 라이브러리’들을 확인할 수 있다. 
+xcode 상단의 ‘+’ 모양 버튼을 누르면 iOS의 화면을 구성하는 ‘오브젝트 라이브러리’들을 확인할 수 있다. 
 여기서 View Controller를 찾아 스토리보드로 드래그하면 새로운 화면이 생성된다.
 
 ![newViewController](./images/newViewController.png)
